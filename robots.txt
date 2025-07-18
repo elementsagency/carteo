@@ -1,0 +1,8 @@
+User-agent: Googlebot
+Disallow: 
+User-agent: googlebot-mobile
+Disallow: 
+User-agent: *
+Allow: /
+Disallow: /cgi-bin/
+Sitemap: https://carteo.co.uk/sitemap.xml
