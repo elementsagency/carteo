@@ -1,0 +1,403 @@
+{
+    "categoryLabels": {
+    "starters": {
+      "en": "Starters",
+      "fr": "Entrées",
+      "es": "Entrantes",
+      "de": "Vorspeisen"
+    },
+    "mains": {
+      "en": "Mains",
+      "fr": "Plats principaux",
+      "es": "Platos principales",
+      "de": "Hauptgerichte"
+    },
+    "desserts": {
+      "en": "Desserts",
+      "fr": "Desserts",
+      "es": "Postres",
+      "de": "Nachspeisen"
+    },
+    "cocktails": {
+      "en": "Cocktails",
+      "fr": "Cocktails",
+      "es": "Cócteles",
+      "de": "Cocktails"
+    }
+  },
+
+    "starters": [
+    {
+      "title": {
+        "en": "Steamed Asparagus",
+        "fr": "Asperges Vapeur",
+        "de": "Gedämpfter Spargel",
+        "es": "Espárragos al Vapor",
+        "pl": "Szparagi na Parze"
+      },
+      "price": "£4.50",
+      "description": {
+        "en": "Fresh green asparagus lightly steamed and finished with sea salt and olive oil.",
+        "fr": "Asperges vertes fraîches légèrement cuites à la vapeur, assaisonnées de sel marin et d'huile d'olive.",
+        "de": "Frischer grüner Spargel, leicht gedämpft und mit Meersalz und Olivenöl verfeinert.",
+        "es": "Espárragos verdes frescos al vapor con sal marina y aceite de oliva.",
+        "pl": "Świeże zielone szparagi gotowane na parze, doprawione solą morską i oliwą z oliwek."
+      },
+      "allergensTitle": {
+        "en": "Allergens",
+        "fr": "Allergènes",
+        "de": "Allergene",
+        "es": "Alérgenos",
+        "pl": "Alergeny"
+      },
+      "allergens": {
+        "en": "None (naturally gluten-free, dairy-free, and vegan)",
+        "fr": "Aucun (naturellement sans gluten, sans produits laitiers et végétalien)",
+        "de": "Keine (von Natur aus glutenfrei, laktosefrei und vegan)",
+        "es": "Ninguno (naturalmente sin gluten, sin lácteos y vegano)",
+        "pl": "Brak (naturalnie bezglutenowe, bez nabiału i wegańskie)"
+      },
+      "image": "../img/menu/starters/steamed-asparagus.webp"
+    },
+    {
+      "title": {
+        "en": "Fresh Oysters with Sea Herbs",
+        "fr": "Huîtres Fraîches aux Herbes Marines",
+        "de": "Frische Austern mit Meereskräutern",
+        "es": "Ostras Frescas con Hierbas Marinas",
+        "pl": "Świeże Ostrygi z Ziołami Morskimi"
+      },
+      "price": "£9.50 (2 pcs)",
+      "description": {
+        "en": "Freshly shucked oysters topped with green sea herbs, citrus pearls, and micro leaves. Served chilled on river stones.",
+        "fr": "Huîtres fraîches ouvertes, garnies d'herbes marines, perles d'agrumes et jeunes pousses. Servies froides sur des galets.",
+        "de": "Frisch geöffnete Austern mit Meereskräutern, Zitrusperlen und Microgreens. Kalt serviert auf Flusssteinen.",
+        "es": "Ostras recién abiertas con hierbas marinas, perlas cítricas y brotes tiernos. Servidas frías sobre piedras de río.",
+        "pl": "Świeże ostrygi z ziołami morskimi, perełkami cytrusowymi i mikroliśćmi. Podawane na zimno na kamieniach rzecznych."
+      },
+      "allergensTitle": {
+        "en": "Allergens",
+        "fr": "Allergènes",
+        "de": "Allergene",
+        "es": "Alérgenos",
+        "pl": "Alergeny"
+      },
+      "allergens": {
+        "en": "Shellfish, molluscs",
+        "fr": "Crustacés, mollusques",
+        "de": "Krebstiere, Weichtiere",
+        "es": "Crustáceos, moluscos",
+        "pl": "Skorupiaki, mięczaki"
+      },
+      "image": "../img/menu/starters/fresh-oysters.webp"
+    },
+    {
+      "title": {
+        "en": "Smoked Salmon Eggs Benedict",
+        "fr": "Œufs Bénédicte au Saumon Fumé",
+        "de": "Eggs Benedict mit Räucherlachs",
+        "es": "Huevos Benedict con Salmón Ahumado",
+        "pl": "Jajka po Benedyktyńsku z Łososiem Wędzonym"
+      },
+      "price": "£10.50",
+      "description": {
+        "en": "Poached egg and smoked salmon on toasted sourdough, served over crushed peas and topped with rich hollandaise sauce and a sprinkle of herbs.",
+        "fr": "Œuf poché et saumon fumé sur pain au levain grillé, servi sur petits pois écrasés et nappé de sauce hollandaise aux herbes.",
+        "de": "Pochiertes Ei und Räucherlachs auf geröstetem Sauerteigbrot, serviert auf zerdrückten Erbsen mit Hollandaise und Kräutern.",
+        "es": "Huevo escalfado y salmón ahumado sobre pan de masa madre tostado, servido con guisantes machacados y salsa holandesa con hierbas.",
+        "pl": "Jajko w koszulce i wędzony łosoś na grzance z chleba na zakwasie, z groszkiem i sosem holenderskim z ziołami."
+      },
+      "allergensTitle": {
+        "en": "Allergens",
+        "fr": "Allergènes",
+        "de": "Allergene",
+        "es": "Alérgenos",
+        "pl": "Alergeny"
+      },
+      "allergens": {
+        "en": "Eggs, fish, milk, gluten",
+        "fr": "Œufs, poisson, lait, gluten",
+        "de": "Eier, Fisch, Milch, Gluten",
+        "es": "Huevos, pescado, leche, gluten",
+        "pl": "Jajka, ryby, mleko, gluten"
+      },
+      "image": "../img/menu/starters/salmon-eggs-benedict.webp"
+    }
+  ],
+
+  "mains": [
+    {
+      "title": {
+        "en": "Tuscan Morning Bowl",
+        "fr": "Bol Matinal Toscan",
+        "de": "Toskana-Frühstücksschüssel",
+        "es": "Tazón Matutino Toscano",
+        "pl": "Toskańska Miska Śniadaniowa"
+      },
+      "price": "£9.95",
+      "description": {
+        "en": "Soft scrambled eggs, roasted baby potatoes, aged prosciutto, basil pesto, grated Parmesan, and toasted sourdough.",
+        "fr": "Œufs brouillés moelleux, pommes de terre rôties, prosciutto affiné, pesto au basilic, parmesan râpé et pain au levain grillé.",
+        "de": "Weich gerührte Eier, geröstete Drillinge, gereifter Prosciutto, Basilikumpesto, geriebener Parmesan und geröstetes Sauerteigbrot.",
+        "es": "Huevos revueltos suaves, patatas baby asadas, prosciutto curado, pesto de albahaca, parmesano rallado y pan de masa madre tostado.",
+        "pl": "Delikatna jajecznica, pieczone młode ziemniaki, dojrzewające prosciutto, pesto bazyliowe, tarty parmezan i tostowany chleb na zakwasie."
+      },
+      "allergensTitle": {
+        "en": "Allergens",
+        "fr": "Allergènes",
+        "de": "Allergene",
+        "es": "Alérgenos",
+        "pl": "Alergeny"
+      },
+      "allergens": {
+        "en": "Eggs, milk, gluten, tree nuts, sulphites",
+        "fr": "Œufs, lait, gluten, fruits à coque, sulfites",
+        "de": "Eier, Milch, Gluten, Schalenfrüchte, Sulfite",
+        "es": "Huevos, leche, gluten, frutos secos, sulfitos",
+        "pl": "Jajka, mleko, gluten, orzechy, siarczyny"
+      },
+        "image": "../img/menu/mains/tuscan-morning-bowl.webp"
+    },
+    {
+      "title": {
+        "en": "Tagliatelle al Funghi",
+        "fr": "Tagliatelles aux Champignons",
+        "de": "Tagliatelle mit Pilzen",
+        "es": "Tagliatelle con Setas",
+        "pl": "Tagliatelle z Grzybami"
+      },
+      "price": "£13.50",
+      "description": {
+        "en": "Fresh tagliatelle pasta tossed in a creamy wild mushroom sauce, topped with Parmigiano Reggiano and thyme.",
+        "fr": "Tagliatelles fraîches dans une sauce crémeuse aux champignons sauvages, garnies de Parmigiano Reggiano et de thym.",
+        "de": "Frische Tagliatelle in cremiger Waldpilzsauce, garniert mit Parmigiano Reggiano und Thymian.",
+        "es": "Pasta tagliatelle fresca con una salsa cremosa de setas, cubierta con Parmigiano Reggiano y tomillo.",
+        "pl": "Świeże tagliatelle w kremowym sosie z leśnych grzybów, posypane Parmigiano Reggiano i tymiankiem."
+      },
+      "allergensTitle": {
+        "en": "Allergens",
+        "fr": "Allergènes",
+        "de": "Allergene",
+        "es": "Alérgenos",
+        "pl": "Alergeny"
+      },
+      "allergens": {
+        "en": "Gluten, milk, eggs",
+        "fr": "Gluten, lait, œufs",
+        "de": "Gluten, Milch, Eier",
+        "es": "Gluten, leche, huevos",
+        "pl": "Gluten, mleko, jajka"
+      },
+      "image": "../img/menu/mains/tagliatelle-al-funghi.webp"
+    },
+    {
+      "title": {
+        "en": "Seared Salmon Fillet",
+        "fr": "Filet de Saumon Poêlé",
+        "de": "Gebratenes Lachsfilet",
+        "es": "Filete de Salmón a la Plancha",
+        "pl": "Łosoś Smażony na Patelni"
+      },
+      "price": "£16.95",
+      "description": {
+        "en": "Seared salmon fillet served over buttered tagliatelle and steamed green beans.",
+        "fr": "Filet de saumon poêlé servi sur des tagliatelles au beurre et haricots verts vapeur.",
+        "de": "Gebratenes Lachsfilet auf Butter-Tagliatelle und gedämpften grünen Bohnen.",
+        "es": "Filete de salmón a la plancha sobre tagliatelle con mantequilla y judías verdes al vapor.",
+        "pl": "Smażony filet z łososia podawany na maślanym tagliatelle z gotowaną fasolką szparagową."
+      },
+      "allergensTitle": {
+        "en": "Allergens",
+        "fr": "Allergènes",
+        "de": "Allergene",
+        "es": "Alérgenos",
+        "pl": "Alergeny"
+      },
+      "allergens": {
+        "en": "Fish, milk, eggs, gluten",
+        "fr": "Poisson, lait, œufs, gluten",
+        "de": "Fisch, Milch, Eier, Gluten",
+        "es": "Pescado, leche, huevos, gluten",
+        "pl": "Ryby, mleko, jajka, gluten"
+      },
+      "image": "../img/menu/mains/seared-salmon-fillet.webp"
+    }
+  ],
+
+  "desserts": [
+    {
+      "title": {
+        "en": "Strawberry Brioche Delight",
+        "fr": "Délice de Brioche aux Fraises",
+        "de": "Erdbeer-Brioche-Genuss",
+        "es": "Delicia de Brioche con Fresas",
+        "pl": "Brioszka z Truskawkami"
+      },
+      "price": "£7.50",
+      "description": {
+        "en": "Buttery toasted brioche filled with whipped coffee cream and fresh strawberries, topped with crushed pistachios.",
+        "fr": "Brioche beurrée grillée garnie de crème fouettée au café et de fraises fraîches, surmontée de pistaches concassées.",
+        "de": "Buttrige, geröstete Brioche gefüllt mit Kaffeecreme und frischen Erdbeeren, garniert mit zerstoßenen Pistazien.",
+        "es": "Brioche tostada con mantequilla, rellena de crema de café batida y fresas frescas, coronada con pistachos triturados.",
+        "pl": "Maślana, opiekana brioszka z kremem kawowym i świeżymi truskawkami, posypana pokruszonymi pistacjami."
+      },
+      "allergensTitle": {
+        "en": "Allergens",
+        "fr": "Allergènes",
+        "de": "Allergene",
+        "es": "Alérgenos",
+        "pl": "Alergeny"
+      },
+      "allergens": {
+        "en": "Gluten, milk, eggs, nuts (pistachios)",
+        "fr": "Gluten, lait, œufs, fruits à coque (pistaches)",
+        "de": "Gluten, Milch, Eier, Nüsse (Pistazien)",
+        "es": "Gluten, leche, huevos, frutos secos (pistachos)",
+        "pl": "Gluten, mleko, jajka, orzechy (pistacje)"
+      },
+      "image": "../img/menu/desserts/strawberry-brioche-delight.webp"
+    },
+    {
+      "title": {
+        "en": "Chocolate Hazelnut Bar",
+        "fr": "Barre Chocolat Noisette",
+        "de": "Schoko-Haselnuss-Riegel",
+        "es": "Barra de Chocolate y Avellanas",
+        "pl": "Czekoladowo-Orzechowy Baton"
+      },
+      "price": "£8.50",
+      "description": {
+        "en": "Crunchy chocolate base layered with hazelnut praline, topped with vanilla cream, fresh raspberries, raspberry gel, and a drizzle of caramel.",
+        "fr": "Base croustillante au chocolat avec praliné de noisette, crème vanille, framboises fraîches, gelée de framboise et filet de caramel.",
+        "de": "Knuspriger Schokoladenboden mit Haselnuss-Praliné, Vanillecreme, frischen Himbeeren, Himbeergel und Karamell.",
+        "es": "Base crujiente de chocolate con praliné de avellanas, crema de vainilla, frambuesas frescas, gel de frambuesa y caramelo.",
+        "pl": "Chrupiąca baza czekoladowa z praliną z orzechów laskowych, krem waniliowy, świeże maliny, żel malinowy i karmel."
+      },
+      "allergensTitle": {
+        "en": "Allergens",
+        "fr": "Allergènes",
+        "de": "Allergene",
+        "es": "Alérgenos",
+        "pl": "Alergeny"
+      },
+      "allergens": {
+        "en": "Milk, nuts (hazelnuts), gluten, eggs, soy",
+        "fr": "Lait, fruits à coque (noisettes), gluten, œufs, soja",
+        "de": "Milch, Nüsse (Haselnüsse), Gluten, Eier, Soja",
+        "es": "Leche, frutos secos (avellanas), gluten, huevos, soja",
+        "pl": "Mleko, orzechy (laskowe), gluten, jajka, soja"
+      },
+      "image": "../img/menu/desserts/chocolate-hazelnut-bar.webp"
+    },
+    {
+      "title": {
+        "en": "Vanilla Twist Pastry",
+        "fr": "Pâtisserie Tressée à la Vanille",
+        "de": "Vanille-Zopfgebäck",
+        "es": "Pastel Trenzado de Vainilla",
+        "pl": "Waniliowa Plecionka"
+      },
+      "price": "£4.50",
+      "description": {
+        "en": "Crispy, buttery braided pastry topped with a sweet vanilla glaze. Perfect with coffee or a glass of cold milk.",
+        "fr": "Pâtisserie tressée croustillante et beurrée, nappée d’un glaçage à la vanille. Parfait avec un café ou un verre de lait froid.",
+        "de": "Knuspriges, buttriges Zopfgebäck mit süßem Vanilleguss. Perfekt zu Kaffee oder einem Glas kalter Milch.",
+        "es": "Pastel trenzado crujiente y mantecoso con glaseado dulce de vainilla. Perfecto con café o leche fría.",
+        "pl": "Chrupiące, maślane ciasto zaplecione, z waniliowym lukrem. Idealne do kawy lub zimnego mleka."
+      },
+      "allergensTitle": {
+        "en": "Allergens",
+        "fr": "Allergènes",
+        "de": "Allergene",
+        "es": "Alérgenos",
+        "pl": "Alergeny"
+      },
+      "allergens": {
+        "en": "Gluten, milk, eggs",
+        "fr": "Gluten, lait, œufs",
+        "de": "Gluten, Milch, Eier",
+        "es": "Gluten, leche, huevos",
+        "pl": "Gluten, mleko, jajka"
+      },
+      "image": "../img/menu/desserts/vanilla-twist-pastry.webp"
+    }
+  ],
+
+  "cocktails": [
+    {
+      "title": {
+        "en": "Citrus Old Fashioned",
+        "fr": "Old Fashioned aux Agrumes",
+        "de": "Zitrus Old Fashioned",
+        "es": "Old Fashioned Cítrico",
+        "pl": "Citrus Old Fashioned"
+      },
+      "price": "£10.00",
+      "description": {
+        "en": "A zesty twist on the classic: bourbon, orange liqueur, aromatic bitters, and a splash of citrus, served over ice with an orange peel garnish.",
+        "fr": "Une variante zestée du classique : bourbon, liqueur d'orange, bitters aromatiques et un soupçon d'agrumes, servi sur glace avec un zeste d'orange.",
+        "de": "Eine spritzige Variante des Klassikers: Bourbon, Orangenlikör, aromatische Bitter und ein Spritzer Zitrus, auf Eis mit Orangenzeste serviert.",
+        "es": "Una versión cítrica del clásico: bourbon, licor de naranja, amargos aromáticos y un toque de cítrico, servido con hielo y piel de naranja.",
+        "pl": "Cytrusowa wariacja klasycznego koktajlu: bourbon, likier pomarańczowy, aromatyczne bittersy i odrobina cytrusów, podawany na lodzie z twistem pomarańczy."
+      },
+      "notes": {
+        "en": "Contains Alcohol",
+        "fr": "Contient de l'alcool",
+        "de": "Enthält Alkohol",
+        "es": "Contiene alcohol",
+        "pl": "Zawiera alkohol"
+      },
+      "image": "../img/menu/cocktails/citrus-old-fashioned.webp"
+    },
+    {
+      "title": {
+        "en": "Espresso Martini",
+        "fr": "Martini Espresso",
+        "de": "Espresso Martini",
+        "es": "Martini de Espresso",
+        "pl": "Espresso Martini"
+      },
+      "price": "£11.00",
+      "description": {
+        "en": "A smooth blend of vodka, coffee liqueur, and fresh espresso, shaken to a silky foam and garnished with a single coffee bean.",
+        "fr": "Un mélange doux de vodka, liqueur de café et espresso frais, secoué jusqu'à obtention d'une mousse soyeuse et garni d'un grain de café.",
+        "de": "Ein sanfter Mix aus Wodka, Kaffeelikör und frischem Espresso, geschüttelt zu einem seidigen Schaum und garniert mit einer Kaffeebohne.",
+        "es": "Una mezcla suave de vodka, licor de café y espresso fresco, agitado hasta obtener una espuma sedosa y decorado con un grano de café.",
+        "pl": "Aksamitne połączenie wódki, likieru kawowego i świeżego espresso, wstrząśnięte do uzyskania pianki i ozdobione ziarnem kawy."
+      },
+      "notes": {
+        "en": "Contains Alcohol, Caffeine",
+        "fr": "Contient de l'alcool et de la caféine",
+        "de": "Enthält Alkohol und Koffein",
+        "es": "Contiene alcohol y cafeína",
+        "pl": "Zawiera alkohol i kofeinę"
+      },
+      "image": "../img/menu/cocktails/espresso-martini.webp"
+    },
+    {
+      "title": {
+        "en": "Violet Midnight",
+        "fr": "Minuit Violette",
+        "de": "Violette Mitternacht",
+        "es": "Medianoche Violeta",
+        "pl": "Violet Midnight"
+      },
+      "price": "£11.50",
+      "description": {
+        "en": "A floral and bold creation with vodka, crème de violette, cold brew coffee, and vanilla liqueur, topped with violet petals for an elegant finish.",
+        "fr": "Création florale et audacieuse à base de vodka, crème de violette, café cold brew et liqueur de vanille, garnie de pétales de violette.",
+        "de": "Eine blumige, kräftige Kreation mit Wodka, Crème de Violette, Cold Brew Kaffee und Vanillelikör, veredelt mit Veilchenblüten.",
+        "es": "Una creación floral e intensa con vodka, crème de violette, café cold brew y licor de vainilla, coronado con pétalos de violeta.",
+        "pl": "Kwiatowy, intensywny koktajl z wódką, crème de violette, kawą na zimno i likierem waniliowym, udekorowany płatkami fiołków."
+      },
+      "notes": {
+        "en": "Contains Alcohol, Caffeine",
+        "fr": "Contient de l'alcool et de la caféine",
+        "de": "Enthält Alkohol und Koffein",
+        "es": "Contiene alcohol y cafeína",
+        "pl": "Zawiera alkohol i kofeinę"
+      },
+      "image": "../img/menu/cocktails/violet-midnight.webp"
+    }
+  ]
+}
