@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
+<title>Privacy Policy — Carteo</title>
+<meta name="description" content="Carteo's Privacy Policy. Learn how we collect, use and protect your data in accordance with UK GDPR.">
+
+<meta property="og:title" content="Privacy Policy — Carteo">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://carteo.co.uk/privacy/">
+<meta property="og:site_name" content="Carteo">
+<meta property="og:image" content="https://carteo.co.uk/img/carteo.webp">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<link rel="icon" href="/img/favicon/favicon.ico">
+<link rel="icon" href="/img/favicon/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/img/favicon/favicon.png">
+<link rel="canonical" href="https://carteo.co.uk/privacy/">
+
+<style>
+:root {
+  --red: #E8372A;
+  --red-dark: #c42d21;
+  --red-light: #fdf0ef;
+  --ink: #1a1a18;
+  --muted: #6b6b67;
+  --border: #e8e8e4;
+  --bg: #fafaf8;
+  --white: #ffffff;
+  --radius: 14px;
+  --radius-sm: 8px;
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'DM Sans', sans-serif;
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --nav-h: 64px;
+  --container: 1200px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-body);
+  background: var(--white);
+  color: var(--ink);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* NAV */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: var(--nav-h);
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+.nav-inner {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 2rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-logo { display: flex; align-items: center; gap: 8px; text-decoration: none; }
+.nav-logo img { height: 34px; width: auto; }
+.nav-logo-text { font-family: var(--font-display); font-size: 24px; font-weight: 500; color: var(--ink); letter-spacing: -0.02em; }
+
+.btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: var(--font-body); font-size: 14px; font-weight: 500;
+  padding: 10px 22px; border-radius: 100px; text-decoration: none;
+  cursor: pointer; border: none; transition: all 0.2s var(--ease); white-space: nowrap;
+}
+.btn-primary { background: var(--red); color: white; }
+.btn-primary:hover { background: var(--red-dark); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(232,55,42,0.3); }
+.btn-outline { background: transparent; color: var(--ink); border: 1.5px solid var(--border); }
+.btn-outline:hover { border-color: var(--ink); background: var(--bg); }
+
+/* HERO STRIP */
+.page-hero {
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  padding: 4rem 2rem;
+}
+.page-hero-inner {
+  max-width: var(--container);
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.page-hero-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 1rem;
+}
+.page-hero-label::before {
+  content: '';
+  display: block;
+  width: 20px; height: 1.5px;
+  background: var(--red);
+}
+.page-hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(36px, 5vw, 60px);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: var(--ink);
+}
+.page-hero-meta {
+  text-align: right;
+  flex-shrink: 0;
+}
+.page-hero-meta p {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+/* LAYOUT */
+.page-body {
+  flex: 1;
+  padding: 5rem 2rem;
+}
+.page-body-inner {
+  max-width: var(--container);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 5rem;
+  align-items: start;
+}
+
+/* SIDEBAR NAV */
+.sidebar {
+  position: sticky;
+  top: calc(var(--nav-h) + 2rem);
+}
+.sidebar-title {
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  margin-bottom: 1rem;
+}
+.sidebar-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.sidebar-links li a {
+  display: block;
+  font-size: 14px;
+  color: var(--muted);
+  text-decoration: none;
+  padding: 0.5rem 0;
+  border-left: 2px solid var(--border);
+  padding-left: 1rem;
+  transition: all 0.2s;
+  line-height: 1.4;
+}
+.sidebar-links li a:hover {
+  color: var(--ink);
+  border-left-color: var(--red);
+}
+.sidebar-links li a.active {
+  color: var(--ink);
+  border-left-color: var(--red);
+  font-weight: 500;
+}
+.sidebar-contact {
+  margin-top: 2rem;
+  background: var(--bg);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  border: 1px solid var(--border);
+}
+.sidebar-contact p {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
+}
+.sidebar-contact a {
+  font-size: 13px;
+  color: var(--red);
+  text-decoration: none;
+  font-weight: 500;
+}
+.sidebar-contact a:hover { text-decoration: underline; }
+
+/* CONTENT */
+.policy-content {
+  min-width: 0;
+}
+.policy-section {
+  margin-bottom: 3.5rem;
+  padding-bottom: 3.5rem;
+  border-bottom: 1px solid var(--border);
+}
+.policy-section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+.policy-section h2 {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 3vw, 30px);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: 1.25rem;
+  line-height: 1.2;
+}
+.policy-section p {
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+.policy-section p:last-child { margin-bottom: 0; }
+.policy-section ul, .policy-section ol {
+  margin: 1rem 0 1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.policy-section li {
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+.policy-section strong {
+  color: var(--ink);
+  font-weight: 500;
+}
+.policy-section a {
+  color: var(--red);
+  text-decoration: none;
+}
+.policy-section a:hover { text-decoration: underline; }
+
+/* highlight box */
+.policy-highlight {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--red);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  padding: 1.25rem 1.5rem;
+  margin: 1.5rem 0;
+}
+.policy-highlight p {
+  font-size: 14px;
+  color: var(--muted);
+  margin: 0;
+  line-height: 1.7;
+}
+
+/* cookie action box */
+.cookie-action {
+  background: var(--red-light);
+  border: 1px solid rgba(232,55,42,0.2);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+}
+.cookie-action p {
+  font-size: 14px;
+  color: var(--ink);
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+.cookie-action span {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.6;
+  display: block;
+}
+
+/* data table */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 14px;
+}
+.data-table th {
+  text-align: left;
+  padding: 0.75rem 1rem;
+  font-weight: 500;
+  color: var(--ink);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  font-size: 13px;
+}
+.data-table td {
+  padding: 0.75rem 1rem;
+  color: var(--muted);
+  border: 1px solid var(--border);
+  vertical-align: top;
+  line-height: 1.6;
+}
+.data-table tr:hover td { background: var(--bg); }
+
+/* FOOTER */
+footer { border-top: 1px solid var(--border); padding: 0; height: var(--nav-h); flex-shrink: 0; }
+.footer-inner {
+  max-width: var(--container); margin: 0 auto; padding: 0 2rem;
+  height: 100%; display: flex; align-items: center;
+  justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+}
+.footer-copy { font-size: 13px; color: var(--muted); }
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .page-body-inner { grid-template-columns: 1fr; gap: 3rem; }
+  .sidebar { position: static; }
+  .page-hero-inner { flex-direction: column; align-items: flex-start; }
+  .page-hero-meta { text-align: left; }
+  footer { height: auto; padding: 1.5rem 2rem; }
+  .footer-inner { flex-direction: column; align-items: center; gap: 1rem; text-align: center; }
+}
+@media (max-width: 600px) {
+  .nav-inner { padding: 0 1.5rem; }
+  .page-hero { padding: 3rem 1.5rem; }
+  .page-body { padding: 3rem 1.5rem; }
+  .data-table { font-size: 13px; }
+  .data-table th, .data-table td { padding: 0.6rem 0.75rem; }
+  .footer-inner { padding: 0 1.5rem; justify-content: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <img src="/img/logo/carteo-red.webp" alt="Carteo logo"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <span class="nav-logo-text" style="display:none">Carteo</span>
+    </a>
+    <a href="/" class="btn btn-outline">← Back to home</a>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div>
+      <div class="page-hero-label">Legal</div>
+      <h1>Privacy Policy</h1>
+    </div>
+    <div class="page-hero-meta">
+      <p><strong>Effective date:</strong> 14 April 2026<br>
+      <strong>Last updated:</strong> 14 April 2026<br>
+      <strong>Jurisdiction:</strong> United Kingdom</p>
+    </div>
+  </div>
+</div>
+
+<!-- BODY -->
+<div class="page-body">
+  <div class="page-body-inner">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <p class="sidebar-title">Contents</p>
+      <ul class="sidebar-links">
+        <li><a href="#who-we-are">1. Who we are</a></li>
+        <li><a href="#what-we-collect">2. What data we collect</a></li>
+        <li><a href="#how-we-use">3. How we use your data</a></li>
+        <li><a href="#legal-basis">4. Legal basis</a></li>
+        <li><a href="#cookies">5. Cookies & tracking</a></li>
+        <li><a href="#third-parties">6. Third parties</a></li>
+        <li><a href="#retention">7. Data retention</a></li>
+        <li><a href="#your-rights">8. Your rights</a></li>
+        <li><a href="#security">9. Security</a></li>
+        <li><a href="#changes">10. Changes to this policy</a></li>
+        <li><a href="#contact">11. Contact us</a></li>
+      </ul>
+      <div class="sidebar-contact">
+        <p>Questions about your data or this policy?</p>
+        <a href="mailto:hello@carteo.co.uk">hello@carteo.co.uk</a>
+      </div>
+    </aside>
+
+    <!-- CONTENT -->
+    <main class="policy-content">
+
+      <div class="policy-section">
+        <div class="policy-highlight">
+          <p>This policy explains how Carteo collects, uses and protects your personal data. We are committed to handling your information transparently and in accordance with the UK General Data Protection Regulation (UK GDPR) and the Data Protection Act 2018. Please read this carefully.</p>
+        </div>
+      </div>
+
+      <div class="policy-section" id="who-we-are">
+        <h2>1. Who we are</h2>
+        <p>Carteo is a digital menu service for restaurants and food businesses, operating at <strong>carteo.co.uk</strong>. We are based in the United Kingdom.</p>
+        <p>For the purposes of UK GDPR, Carteo is the <strong>data controller</strong> — meaning we decide how and why personal data is processed.</p>
+        <p>You can contact us at any time at: <a href="mailto:hello@carteo.co.uk">hello@carteo.co.uk</a></p>
+      </div>
+
+      <div class="policy-section" id="what-we-collect">
+        <h2>2. What data we collect</h2>
+        <p>We only collect data that is necessary to provide our service. The information we collect depends on how you interact with us.</p>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Data</th>
+              <th>When collected</th>
+              <th>Why</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Name</strong></td>
+              <td>Contact form submission</td>
+              <td>To address you personally in our reply</td>
+            </tr>
+            <tr>
+              <td><strong>Email address</strong></td>
+              <td>Contact form submission</td>
+              <td>To respond to your enquiry</td>
+            </tr>
+            <tr>
+              <td><strong>Restaurant / business name</strong></td>
+              <td>Contact form submission</td>
+              <td>To understand and prepare for your project</td>
+            </tr>
+            <tr>
+              <td><strong>Country</strong></td>
+              <td>Contact form submission</td>
+              <td>To understand your location and service requirements</td>
+            </tr>
+            <tr>
+              <td><strong>Plan interest & message</strong></td>
+              <td>Contact form submission</td>
+              <td>To tailor our response to your needs</td>
+            </tr>
+            <tr>
+              <td><strong>Usage data</strong></td>
+              <td>Automatically on site visit</td>
+              <td>Analytics and website improvement (see cookies section)</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>We do <strong>not</strong> collect payment card details, national insurance numbers, or any sensitive personal data as defined under UK GDPR.</p>
+        <p>We do <strong>not</strong> knowingly collect data from individuals under 18. Our service is intended for business owners and their representatives.</p>
+      </div>
+
+      <div class="policy-section" id="how-we-use">
+        <h2>3. How we use your data</h2>
+        <p>We use the information you provide to:</p>
+        <ul>
+          <li>Respond to your enquiry and discuss your digital menu project</li>
+          <li>Deliver the Carteo service once you become a client</li>
+          <li>Communicate updates, changes or information relevant to your service</li>
+          <li>Improve our website and understand how visitors use it</li>
+          <li>Comply with our legal and regulatory obligations</li>
+        </ul>
+        <p>We will <strong>never</strong> sell your personal data to third parties. We will <strong>never</strong> use your data for unsolicited marketing without your explicit consent.</p>
+      </div>
+
+      <div class="policy-section" id="legal-basis">
+        <h2>4. Legal basis for processing</h2>
+        <p>Under UK GDPR, we must have a lawful basis for processing your personal data. We rely on the following:</p>
+        <ul>
+          <li><strong>Legitimate interests</strong> — responding to enquiries you have voluntarily submitted through our contact form, and analysing website usage to improve our service.</li>
+          <li><strong>Contract performance</strong> — processing your data to fulfil our obligations once you become a Carteo client.</li>
+          <li><strong>Consent</strong> — for the use of non-essential cookies and tracking technologies (Google Analytics, Meta Pixel). You can withdraw this consent at any time.</li>
+          <li><strong>Legal obligation</strong> — where we are required to process data to comply with applicable law.</li>
+        </ul>
+      </div>
+
+      <div class="policy-section" id="cookies">
+        <h2>5. Cookies & tracking technologies</h2>
+        <p>Our website uses cookies and similar tracking technologies. Some are essential for the site to function; others help us understand how visitors use the site so we can improve it.</p>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Cookie / service</th>
+              <th>Type</th>
+              <th>Purpose</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Google Analytics</strong></td>
+              <td>Analytics</td>
+              <td>Tracks page views, session data and user behaviour anonymously to help us improve the website. Data is processed by Google LLC.</td>
+            </tr>
+            <tr>
+              <td><strong>Meta Pixel</strong></td>
+              <td>Marketing</td>
+              <td>Tracks visits and actions on our website to measure the effectiveness of any advertising we run on Facebook or Instagram. Data is processed by Meta Platforms Ireland Ltd.</td>
+            </tr>
+          </tbody>
+        </table>
+
+      <div class="cookie-action">
+        <p>Managing your cookie preferences</p>
+        <span>When you first visit our website, you will be asked to accept or decline non-essential cookies via our cookie consent banner. You can update your preferences at any time through the banner or via your browser settings. You can also opt out directly using the tools provided by <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener" style="color:var(--red);">Google</a> and <a href="https://www.facebook.com/privacy/policies/cookies/" target="_blank" rel="noopener" style="color:var(--red);">Meta</a>.</span>
+      </div>
+
+        <p>You can manage or disable cookies at any time through your browser settings. Please note that disabling certain cookies may affect the functionality of the website.</p>
+      </div>
+
+      <div class="policy-section" id="third-parties">
+        <h2>6. Third parties we work with</h2>
+        <p>We use a small number of trusted third-party services to operate our website and business. Each is carefully chosen and only receives data necessary for their function.</p>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Third party</th>
+              <th>Purpose</th>
+              <th>Data shared</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Google LLC</strong></td>
+              <td>Website analytics via Google Analytics</td>
+              <td>Anonymised usage data; IP address (analytics)</td>
+            </tr>
+            <tr>
+              <td><strong>Meta Platforms Ireland Ltd</strong></td>
+              <td>Website visit tracking for advertising measurement via Meta Pixel</td>
+              <td>Anonymised visit and interaction data</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>All third-party processors are required to handle your data in accordance with applicable data protection law. Where data is transferred outside the UK, we ensure appropriate safeguards are in place (such as Standard Contractual Clauses).</p>
+        <p>We do not sell, rent or trade your personal data with any third party for their own marketing purposes.</p>
+      </div>
+
+      <div class="policy-section" id="retention">
+        <h2>7. Data retention</h2>
+        <p>We retain your personal data for as long as is necessary to fulfil the purposes for which it was collected, or as required by law.</p>
+        <ul>
+          <li><strong>Enquiry data</strong> (contact form submissions) — retained for as long as is reasonably necessary to manage our business relationship with you, including any follow-up communication.</li>
+          <li><strong>Client data</strong> — retained for the duration of our service agreement and for a reasonable period thereafter for legal and business purposes.</li>
+          <li><strong>Analytics data</strong> — retained according to the data retention settings of Google Analytics (default 26 months).</li>
+        </ul>
+        <p>When data is no longer required, we will securely delete or anonymise it.</p>
+      </div>
+
+      <div class="policy-section" id="your-rights">
+        <h2>8. Your rights under UK GDPR</h2>
+        <p>As a data subject, you have the following rights. You can exercise any of these rights by contacting us at <a href="mailto:hello@carteo.co.uk">hello@carteo.co.uk</a>. We will respond within 30 days.</p>
+        <ul>
+          <li><strong>Right of access</strong> — you can request a copy of the personal data we hold about you.</li>
+          <li><strong>Right to rectification</strong> — you can ask us to correct any inaccurate or incomplete data.</li>
+          <li><strong>Right to erasure</strong> — you can ask us to delete your data where there is no compelling reason for us to continue processing it.</li>
+          <li><strong>Right to restriction</strong> — you can ask us to restrict processing of your data in certain circumstances.</li>
+          <li><strong>Right to data portability</strong> — you can request your data in a structured, machine-readable format.</li>
+          <li><strong>Right to object</strong> — you can object to processing based on legitimate interests or for direct marketing purposes.</li>
+          <li><strong>Right to withdraw consent</strong> — where processing is based on consent (e.g. cookies), you can withdraw that consent at any time.</li>
+        </ul>
+        <div class="policy-highlight">
+          <p>If you are unhappy with how we handle your data, you have the right to lodge a complaint with the <strong>Information Commissioner's Office (ICO)</strong> — the UK's data protection regulator. Visit <a href="https://ico.org.uk" target="_blank" rel="noopener">ico.org.uk</a> or call 0303 123 1113.</p>
+        </div>
+      </div>
+
+      <div class="policy-section" id="security">
+        <h2>9. Security</h2>
+        <p>We take the security of your personal data seriously. We implement appropriate technical and organisational measures to protect your data against unauthorised access, loss, or misuse.</p>
+        <p>Our website is served over HTTPS (encrypted connection). Form submissions are transmitted securely. Access to your data is limited to those who need it to provide our service.</p>
+        <p>While we take all reasonable steps to protect your data, no method of transmission over the internet is 100% secure. If you have concerns about data security, please contact us at <a href="mailto:hello@carteo.co.uk">hello@carteo.co.uk</a>.</p>
+      </div>
+
+      <div class="policy-section" id="changes">
+        <h2>10. Changes to this policy</h2>
+        <p>We may update this Privacy Policy from time to time to reflect changes in our practices, services or legal obligations. When we make significant changes, we will update the "Last updated" date at the top of this page.</p>
+        <p>We encourage you to review this policy periodically. Continued use of our website after any changes constitutes your acceptance of the updated policy.</p>
+      </div>
+
+      <div class="policy-section" id="contact">
+        <h2>11. Contact us</h2>
+        <p>If you have any questions, concerns or requests regarding this Privacy Policy or how we handle your personal data, please contact us:</p>
+        <p><strong>Email:</strong> <a href="mailto:hello@carteo.co.uk">hello@carteo.co.uk</a></p>
+        <p>We aim to respond to all data-related requests within <strong>30 days</strong> in accordance with UK GDPR requirements.</p>
+      </div>
+
+    </main>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <a href="/" class="nav-logo">
+      <img src="/img/logo/carteo-red.webp" alt="Carteo logo"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <span class="nav-logo-text" style="display:none">Carteo</span>
+    </a>
+    <ul style="display:flex;gap:1.5rem;list-style:none;">
+      <li><a href="/privacy/" style="font-size:13px;color:var(--muted);text-decoration:none;font-weight:500;color:var(--ink);">Privacy Policy</a></li>
+      <li><a href="/terms/" style="font-size:13px;color:var(--muted);text-decoration:none;">Terms & Conditions</a></li>
+    </ul>
+    <span class="footer-copy">© 2026 Carteo. All rights reserved.</span>
+  </div>
+</footer>
+
+<script>
+// Highlight active sidebar link on scroll
+const sections = document.querySelectorAll('.policy-section[id]');
+const sidebarLinks = document.querySelectorAll('.sidebar-links a');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      sidebarLinks.forEach(link => link.classList.remove('active'));
+      const active = document.querySelector(`.sidebar-links a[href="#${entry.target.id}"]`);
+      if (active) active.classList.add('active');
+    }
+  });
+}, { rootMargin: '-20% 0px -70% 0px' });
+
+sections.forEach(s => observer.observe(s));
+</script>
+
+</body>
+</html>

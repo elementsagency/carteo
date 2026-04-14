@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="robots" content="index, follow">
+<title>Live Demo — Carteo Digital Menu</title>
+<meta name="description" content="See Carteo in action. Browse a live digital menu demo and experience how modern restaurant menus look for your guests.">
+<meta property="og:title" content="Live Demo — Carteo Digital Menu">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://carteo.co.uk/demo/">
+<meta property="og:description" content="See Carteo in action. Browse a live digital menu demo — multilingual, beautiful, and fully managed.">
+<meta property="og:image" content="https://carteo.co.uk/img/carteo.webp">
+<meta property="og:site_name" content="Carteo">
+<meta name="theme-color" content="#faf9f7">
+
+<link rel="icon" href="/img/favicon/favicon.ico">
+<link rel="icon" href="/img/favicon/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/img/favicon/favicon.png">
+<link rel="canonical" href="https://carteo.co.uk/demo/">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+/* ─── RESET & VARS ─── */
+:root {
+  --red: #E8372A;
+  --red-dark: #c42d21;
+  --red-light: #fdf0ef;
+  --ink: #1a1a18;
+  --muted: #6b6b67;
+  --border: #e8e8e4;
+  --bg: #faf9f7;
+  --white: #ffffff;
+  --radius: 16px;
+  --radius-sm: 10px;
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'DM Sans', sans-serif;
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --shell-w: 420px;
+  --shell-h: 88vh;
+  --header-h: 130px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { height: 100%; }
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--ink);
+  min-height: 100%;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* ─── OUTER PAGE (desktop wrapper) ─── */
+.page-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* top bar shown only on desktop */
+.demo-topbar {
+  display: none;
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  padding: 0 2rem;
+  height: 60px;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+  position: sticky;
+  top: 0;
+  z-index: 200;
+}
+.demo-topbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+.demo-topbar-logo img { height: 28px; width: auto; }
+.demo-topbar-logo span {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+}
+.demo-topbar-tag {
+  font-size: 12px;
+  color: var(--muted);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  padding: 4px 12px;
+  border-radius: 100px;
+}
+.demo-topbar-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  padding: 8px 18px;
+  border-radius: 100px;
+  text-decoration: none;
+  background: var(--red);
+  color: white;
+  transition: all 0.2s var(--ease);
+  border: none;
+  cursor: pointer;
+}
+.demo-topbar-cta:hover { background: var(--red-dark); transform: translateY(-1px); box-shadow: 0 4px 14px rgba(232,55,42,0.3); }
+
+.demo-stage {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 2rem;
+}
+
+/* ─── PHONE SHELL (desktop) ─── */
+.phone-shell {
+  width: var(--shell-w);
+  height: var(--shell-h);
+  max-height: 820px;
+  background: var(--white);
+  border-radius: 32px;
+  box-shadow: 0 40px 100px rgba(0,0,0,0.15), 0 0 0 1px var(--border);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* ─── MENU INNER (shared mobile + desktop) ─── */
+.menu-wrap {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--bg);
+  overflow: hidden;
+}
+
+/* MENU HEADER */
+.menu-header {
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  padding: 0;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 10;
+}
+.menu-header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.25rem 0.75rem;
+}
+.restaurant-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.restaurant-logo {
+  width: 36px; height: 36px;
+  background: var(--ink);
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 400;
+  color: white;
+  letter-spacing: -0.02em;
+  flex-shrink: 0;
+}
+.restaurant-name {
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 400;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+}
+.restaurant-tag {
+  font-size: 10px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* language selector */
+.lang-select-wrap { position: relative; }
+.lang-select {
+  appearance: none;
+  -webkit-appearance: none;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  padding: 6px 28px 6px 10px;
+  font-size: 12px;
+  font-family: var(--font-body);
+  color: var(--ink);
+  cursor: pointer;
+  transition: border-color 0.2s;
+  background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L5 5L9 1' stroke='%236b6b67' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  outline: none;
+}
+.lang-select:focus { border-color: var(--ink); }
+
+/* category tabs */
+.menu-cats {
+  display: flex;
+  gap: 0;
+  padding: 0 1.25rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.menu-cats::-webkit-scrollbar { display: none; }
+.cat-btn {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--muted);
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  padding: 0.6rem 0.875rem;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color 0.2s, border-color 0.2s;
+  margin-bottom: -1px;
+}
+.cat-btn:hover { color: var(--ink); }
+.cat-btn.active { color: var(--ink); border-bottom-color: var(--ink); }
+
+/* MENU BODY */
+.menu-body {
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding: 1rem 1.25rem 2rem;
+}
+.menu-body::-webkit-scrollbar { display: none; }
+
+/* section heading */
+.menu-section-title {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+  margin-bottom: 1rem;
+  padding-top: 0.25rem;
+}
+
+/* PRODUCT CARDS */
+.product-list { display: flex; flex-direction: column; gap: 0; }
+
+.product-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-bottom: 0.75rem;
+  border: 1px solid var(--border);
+  transition: box-shadow 0.2s, transform 0.2s;
+  cursor: pointer;
+}
+.product-card:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.07); transform: translateY(-1px); }
+.product-card:active { transform: scale(0.99); }
+
+/* expanded state */
+.product-card.open .product-extra { display: block; }
+.product-card.open .card-chevron { transform: rotate(180deg); }
+
+.card-main {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+}
+.card-img {
+  width: 90px;
+  flex-shrink: 0;
+  background: var(--bg);
+  position: relative;
+  overflow: hidden;
+}
+.card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.card-img-placeholder {
+  width: 100%;
+  height: 100%;
+  min-height: 90px;
+  background: linear-gradient(135deg, #f0ebe4 0%, #e8e3dc 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card-img-placeholder span {
+  font-size: 28px;
+  opacity: 0.5;
+}
+.card-info {
+  flex: 1;
+  padding: 0.875rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.25rem;
+  min-width: 0;
+}
+.card-name {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--ink);
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+.card-desc-preview {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.4;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.card-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.375rem;
+}
+.card-price {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink);
+}
+.card-chevron {
+  width: 16px; height: 16px;
+  color: var(--muted);
+  transition: transform 0.25s var(--ease);
+  flex-shrink: 0;
+}
+
+/* expanded detail */
+.product-extra {
+  display: none;
+  padding: 0 1rem 1rem;
+  border-top: 1px solid var(--border);
+  margin-top: 0;
+  animation: expandDown 0.25s var(--ease) forwards;
+}
+@keyframes expandDown {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.product-extra-desc {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.7;
+  margin: 0.75rem 0 0.625rem;
+}
+.allergen-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  color: var(--muted);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  padding: 3px 10px;
+}
+.allergen-label {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.375rem;
+}
+.notes-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  background: var(--red-light);
+  color: var(--red);
+  border-radius: 100px;
+  padding: 3px 10px;
+  margin-top: 0.5rem;
+}
+
+/* loading shimmer */
+.shimmer-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  margin-bottom: 0.75rem;
+  overflow: hidden;
+  display: flex;
+  height: 90px;
+}
+.shimmer-img { width: 90px; flex-shrink: 0; background: var(--border); }
+.shimmer-body { flex: 1; padding: 1rem; display: flex; flex-direction: column; gap: 8px; }
+.shimmer-line { height: 10px; background: var(--border); border-radius: 5px; animation: shimmer 1.2s ease-in-out infinite; }
+.shimmer-line.s { width: 50%; }
+.shimmer-line.m { width: 70%; }
+@keyframes shimmer {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* DEMO BANNER at bottom of menu */
+.demo-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  background: var(--ink);
+  padding: 0.75rem 1.25rem;
+  flex-shrink: 0;
+}
+.demo-banner-text {
+  font-size: 12px;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.4;
+}
+.demo-banner-text strong { color: white; font-weight: 500; display: block; font-size: 13px; margin-bottom: 1px; }
+.demo-banner-btn {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 500;
+  padding: 7px 14px;
+  border-radius: 100px;
+  background: var(--red);
+  color: white;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.2s;
+  flex-shrink: 0;
+  display: inline-block;
+}
+.demo-banner-btn:hover { background: var(--red-dark); }
+
+/* ─── MOBILE: full screen ─── */
+@media (max-width: 700px) {
+  body { background: var(--bg); }
+  .demo-topbar { display: none !important; }
+  .demo-stage { padding: 0; align-items: stretch; }
+  .phone-shell {
+    width: 100%;
+    height: 100dvh;
+    border-radius: 0;
+    box-shadow: none;
+    max-height: none;
+  }
+}
+
+/* ─── DESKTOP: show topbar, stage ─── */
+@media (min-width: 701px) {
+  .demo-topbar { display: flex; }
+  .phone-shell { margin-top: 1rem; }
+}
+
+/* fade in cards */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.product-card {
+  opacity: 0;
+  animation: fadeUp 0.4s var(--ease) forwards;
+}
+
+/* LIGHTBOX */
+#lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0,0,0,0.85);
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  cursor: zoom-out;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+#lightbox.open { display: flex; animation: lbFadeIn 0.25s var(--ease) forwards; }
+@keyframes lbFadeIn { from { opacity: 0; } to { opacity: 1; } }
+#lightbox-img {
+  max-width: min(520px, 92vw);
+  max-height: 80dvh;
+  width: auto; height: auto;
+  border-radius: var(--radius);
+  object-fit: contain;
+  box-shadow: 0 32px 80px rgba(0,0,0,0.5);
+  animation: lbScaleIn 0.3s var(--ease) forwards;
+  cursor: default;
+}
+@keyframes lbScaleIn { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
+#lightbox-close {
+  position: absolute; top: 1.25rem; right: 1.25rem;
+  width: 36px; height: 36px;
+  background: rgba(255,255,255,0.12); border: none; border-radius: 50%;
+  color: white; font-size: 18px; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.2s; line-height: 1;
+}
+#lightbox-close:hover { background: rgba(255,255,255,0.22); }
+.card-img.has-photo { cursor: zoom-in; position: relative; }
+.card-img.has-photo::after {
+  content: '⤢'; position: absolute; bottom: 5px; right: 5px;
+  font-size: 12px; color: white; background: rgba(0,0,0,0.4);
+  border-radius: 4px; padding: 1px 5px; pointer-events: none;
+}
+
+#cookie-banner {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  width: calc(100% - 3rem);
+  max-width: 620px;
+  background: var(--ink);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.2);
+  animation: cookieSlideUp 0.4s var(--ease) forwards;
+}
+#cookie-banner.hidden {
+  display: none;
+}
+@keyframes cookieSlideUp {
+  from { opacity: 0; transform: translateX(-50%) translateY(20px); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+.cookie-text {
+  flex: 1;
+  min-width: 200px;
+}
+.cookie-text p {
+  font-size: 13px;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.6;
+  margin: 0;
+}
+.cookie-text a {
+  color: rgba(255,255,255,0.9);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.cookie-text a:hover { color: white; }
+.cookie-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+.cookie-btn {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  padding: 8px 18px;
+  border-radius: 100px;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s var(--ease);
+  white-space: nowrap;
+}
+.cookie-btn-accept {
+  background: var(--red);
+  color: white;
+}
+.cookie-btn-accept:hover {
+  background: var(--red-dark);
+  box-shadow: 0 4px 14px rgba(232,55,42,0.4);
+}
+.cookie-btn-decline {
+  background: transparent;
+  color: rgba(255,255,255,0.5);
+  border: 1px solid rgba(255,255,255,0.15);
+}
+.cookie-btn-decline:hover {
+  color: white;
+  border-color: rgba(255,255,255,0.4);
+}
+@media (max-width: 500px) {
+  #cookie-banner {
+    bottom: 1rem;
+    width: calc(100% - 2rem);
+    padding: 1rem 1.25rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .cookie-actions { width: 100%; }
+  .cookie-btn { flex: 1; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<div id="cookie-banner" class="hidden" role="dialog" aria-label="Cookie consent">
+  <div class="cookie-text">
+    <p>We use cookies for analytics and advertising. See our <a href="/privacy/">Privacy Policy</a> for details.</p>
+  </div>
+  <div class="cookie-actions">
+    <button class="cookie-btn cookie-btn-decline" id="cookieDecline">Decline</button>
+    <button class="cookie-btn cookie-btn-accept" id="cookieAccept">Accept</button>
+  </div>
+</div>
+
+<div class="page-shell">
+
+  <!-- DESKTOP TOP BAR -->
+  <div class="demo-topbar">
+    <a href="/" class="demo-topbar-logo">
+      <img src="/img/logo/carteo-red.webp" alt="Carteo logo"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <span style="display:none">Carteo</span>
+    </a>
+    <span class="demo-topbar-tag">✦ Live demo — this is what your guests see</span>
+    <a href="/#contact" class="demo-topbar-cta">Get your menu →</a>
+  </div>
+
+  <!-- STAGE -->
+  <div class="demo-stage">
+    <div class="phone-shell">
+      <div class="menu-wrap">
+
+        <!-- MENU HEADER -->
+        <div class="menu-header">
+          <div class="menu-header-top">
+            <div class="restaurant-brand">
+              <div class="restaurant-logo">V</div>
+              <div>
+                <div class="restaurant-name">Verde & Co.</div>
+                <div class="restaurant-tag">London · Modern European</div>
+              </div>
+            </div>
+            <div class="lang-select-wrap">
+              <select class="lang-select" id="langSelect">
+                <option value="en">🇬🇧 EN</option>
+                <option value="fr">🇫🇷 FR</option>
+                <option value="de">🇩🇪 DE</option>
+                <option value="es">🇪🇸 ES</option>
+                <option value="pl">🇵🇱 PL</option>
+              </select>
+            </div>
+          </div>
+          <div class="menu-cats" id="menuCats">
+            <button class="cat-btn active" data-cat="starters">Starters</button>
+            <button class="cat-btn" data-cat="mains">Mains</button>
+            <button class="cat-btn" data-cat="desserts">Desserts</button>
+            <button class="cat-btn" data-cat="cocktails">Cocktails</button>
+          </div>
+        </div>
+
+        <!-- MENU BODY -->
+        <div class="menu-body" id="menuBody">
+          <!-- products injected here -->
+        </div>
+
+        <!-- DEMO BANNER -->
+        <div class="demo-banner">
+          <div class="demo-banner-text">
+            <strong>This is a Carteo demo</strong>
+            Want a menu like this for your restaurant?
+          </div>
+          <a href="/#contact" class="demo-banner-btn">Get started</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" role="dialog" aria-modal="true" aria-label="Image preview">
+  <button id="lightbox-close" aria-label="Close">✕</button>
+  <img id="lightbox-img" src="" alt="">
+</div>
+
+<script>
+const MENU = {
+  categoryLabels: {
+    starters: { en:"Starters", fr:"Entrées", de:"Vorspeisen", es:"Entrantes", pl:"Przystawki" },
+    mains:    { en:"Mains", fr:"Plats principaux", de:"Hauptgerichte", es:"Platos principales", pl:"Dania główne" },
+    desserts: { en:"Desserts", fr:"Desserts", de:"Nachspeisen", es:"Postres", pl:"Desery" },
+    cocktails:{ en:"Cocktails", fr:"Cocktails", de:"Cocktails", es:"Cócteles", pl:"Koktajle" }
+  },
+  emojis: {
+    starters: "🥗", mains: "🍝", desserts: "🍰", cocktails: "🍹"
+  },
+  starters: [
+    {
+      title: { en:"Steamed Asparagus", fr:"Asperges Vapeur", de:"Gedämpfter Spargel", es:"Espárragos al Vapor", pl:"Szparagi na Parze" },
+      price: "£4.50",
+      description: { en:"Fresh green asparagus lightly steamed, finished with sea salt and a drizzle of olive oil.", fr:"Asperges vertes fraîches légèrement cuites à la vapeur, assaisonnées de sel marin et d'huile d'olive.", de:"Frischer grüner Spargel, leicht gedämpft, mit Meersalz und Olivenöl verfeinert.", es:"Espárragos verdes frescos al vapor con sal marina y aceite de oliva.", pl:"Świeże zielone szparagi gotowane na parze z solą morską i oliwą." },
+      allergensTitle: { en:"Allergens", fr:"Allergènes", de:"Allergene", es:"Alérgenos", pl:"Alergeny" },
+      allergens: { en:"None — gluten-free, dairy-free, vegan", fr:"Aucun — sans gluten, sans lactose, végétalien", de:"Keine — glutenfrei, laktosefrei, vegan", es:"Ninguno — sin gluten, sin lácteos, vegano", pl:"Brak — bezglutenowe, bez nabiału, wegańskie" },
+      image: "/img/menu/starters/steamed-asparagus.webp"
+    },
+    {
+      title: { en:"Fresh Oysters with Sea Herbs", fr:"Huîtres Fraîches aux Herbes Marines", de:"Frische Austern mit Meereskräutern", es:"Ostras Frescas con Hierbas Marinas", pl:"Świeże Ostrygi z Ziołami Morskimi" },
+      price: "£9.50 (2 pcs)",
+      description: { en:"Freshly shucked oysters topped with green sea herbs, citrus pearls, and micro leaves. Served chilled on river stones.", fr:"Huîtres fraîches garnies d'herbes marines, perles d'agrumes et jeunes pousses. Servies froides sur galets.", de:"Frisch geöffnete Austern mit Meereskräutern, Zitrusperlen und Microgreens auf Flusssteinen.", es:"Ostras recién abiertas con hierbas marinas, perlas cítricas y brotes. Servidas frías sobre piedras.", pl:"Świeże ostrygi z ziołami morskimi, perełkami cytrusowymi i mikroliśćmi na kamieniach." },
+      allergensTitle: { en:"Allergens", fr:"Allergènes", de:"Allergene", es:"Alérgenos", pl:"Alergeny" },
+      allergens: { en:"Shellfish, molluscs", fr:"Crustacés, mollusques", de:"Krebstiere, Weichtiere", es:"Crustáceos, moluscos", pl:"Skorupiaki, mięczaki" },
+      image: "/img/menu/starters/fresh-oysters.webp"
+    },
+    {
+      title: { en:"Smoked Salmon Eggs Benedict", fr:"Œufs Bénédicte au Saumon Fumé", de:"Eggs Benedict mit Räucherlachs", es:"Huevos Benedict con Salmón Ahumado", pl:"Jajka Benedyktyńskie z Łososiem" },
+      price: "£10.50",
+      description: { en:"Poached egg and smoked salmon on toasted sourdough, served over crushed peas with hollandaise sauce and fresh herbs.", fr:"Œuf poché et saumon fumé sur levain grillé, petits pois écrasés et hollandaise aux herbes.", de:"Pochiertes Ei mit Räucherlachs auf Sauerteigbrot, zerdrückten Erbsen und Hollandaise.", es:"Huevo escalfado con salmón ahumado sobre masa madre, guisantes y salsa holandesa.", pl:"Jajko w koszulce z łososiem na chlebie na zakwasie, groszek i sos holenderski." },
+      allergensTitle: { en:"Allergens", fr:"Allergènes", de:"Allergene", es:"Alérgenos", pl:"Alergeny" },
+      allergens: { en:"Eggs, fish, milk, gluten", fr:"Œufs, poisson, lait, gluten", de:"Eier, Fisch, Milch, Gluten", es:"Huevos, pescado, leche, gluten", pl:"Jajka, ryby, mleko, gluten" },
+      image: "/img/menu/starters/salmon-eggs-benedict.webp"
+    }
+  ],
+  mains: [
+    {
+      title: { en:"Tuscan Morning Bowl", fr:"Bol Matinal Toscan", de:"Toskana-Frühstücksschüssel", es:"Tazón Matutino Toscano", pl:"Toskańska Miska" },
+      price: "£9.95",
+      description: { en:"Soft scrambled eggs, roasted baby potatoes, aged prosciutto, basil pesto, grated Parmesan, and toasted sourdough.", fr:"Œufs brouillés, pommes de terre rôties, prosciutto, pesto au basilic, parmesan et levain grillé.", de:"Rührei, geröstete Drillinge, Prosciutto, Basilikumpesto, Parmesan und Sauerteigbrot.", es:"Huevos revueltos, patatas baby, prosciutto, pesto, parmesano y pan de masa madre.", pl:"Jajecznica, pieczone ziemniaki, prosciutto, pesto bazyliowe, parmezan i chleb na zakwasie." },
+      allergensTitle: { en:"Allergens", fr:"Allergènes", de:"Allergene", es:"Alérgenos", pl:"Alergeny" },
+      allergens: { en:"Eggs, milk, gluten, tree nuts, sulphites", fr:"Œufs, lait, gluten, fruits à coque, sulfites", de:"Eier, Milch, Gluten, Schalenfrüchte, Sulfite", es:"Huevos, leche, gluten, frutos secos, sulfitos", pl:"Jajka, mleko, gluten, orzechy, siarczyny" },
+      image: "/img/menu/mains/tuscan-morning-bowl.webp"
+    },
+    {
+      title: { en:"Tagliatelle al Funghi", fr:"Tagliatelles aux Champignons", de:"Tagliatelle mit Pilzen", es:"Tagliatelle con Setas", pl:"Tagliatelle z Grzybami" },
+      price: "£13.50",
+      description: { en:"Fresh tagliatelle tossed in a creamy wild mushroom sauce, topped with Parmigiano Reggiano and thyme.", fr:"Tagliatelles fraîches dans une sauce crémeuse aux champignons sauvages, Parmigiano et thym.", de:"Frische Tagliatelle in cremiger Waldpilzsauce mit Parmigiano Reggiano und Thymian.", es:"Tagliatelle fresca con salsa cremosa de setas silvestres, Parmigiano y tomillo.", pl:"Świeże tagliatelle w kremowym sosie z leśnych grzybów, Parmigiano Reggiano i tymiankiem." },
+      allergensTitle: { en:"Allergens", fr:"Allergènes", de:"Allergene", es:"Alérgenos", pl:"Alergeny" },
+      allergens: { en:"Gluten, milk, eggs", fr:"Gluten, lait, œufs", de:"Gluten, Milch, Eier", es:"Gluten, leche, huevos", pl:"Gluten, mleko, jajka" },
+      image: "/img/menu/mains/tagliatelle-al-funghi.webp"
+    },
+    {
+      title: { en:"Seared Salmon Fillet", fr:"Filet de Saumon Poêlé", de:"Gebratenes Lachsfilet", es:"Filete de Salmón a la Plancha", pl:"Smażony Filet z Łososia" },
+      price: "£16.95",
+      description: { en:"Seared salmon fillet served over buttered tagliatelle and steamed green beans.", fr:"Filet de saumon poêlé servi sur tagliatelles au beurre et haricots verts vapeur.", de:"Gebratenes Lachsfilet auf Butter-Tagliatelle und gedämpften grünen Bohnen.", es:"Filete de salmón a la plancha servido sobre tagliatelle con mantequilla y judías verdes al vapor.", pl:"Smażony filet z łososia podawany na tagliatelle z masłem i gotowanej fasolce szparagowej." },
+      allergensTitle: { en:"Allergens", fr:"Allergènes", de:"Allergene", es:"Alérgenos", pl:"Alergeny" },
+      allergens: { en:"Fish, milk, eggs, gluten", fr:"Poisson, lait, œufs, gluten", de:"Fisch, Milch, Eier, Gluten", es:"Pescado, leche, huevos, gluten", pl:"Ryby, mleko, jajka, gluten" },
+      image: "/img/menu/mains/seared-salmon-fillet.webp"
+    }
+  ],
+  desserts: [
+    {
+      title: { en:"Strawberry Brioche Delight", fr:"Délice de Brioche aux Fraises", de:"Erdbeer-Brioche-Genuss", es:"Delicia de Brioche con Fresas", pl:"Brioszka z Truskawkami" },
+      price: "£7.50",
+      description: { en:"Buttery toasted brioche filled with whipped coffee cream and fresh strawberries, topped with crushed pistachios.", fr:"Brioche grillée garnie de crème au café, fraises fraîches et pistaches concassées.", de:"Geröstete Brioche mit Kaffeecreme, frischen Erdbeeren und zerstoßenen Pistazien.", es:"Brioche tostada con crema de café, fresas frescas y pistachos triturados.", pl:"Opiekana brioszka z kremem kawowym, świeżymi truskawkami i pistacjami." },
+      allergensTitle: { en:"Allergens", fr:"Allergènes", de:"Allergene", es:"Alérgenos", pl:"Alergeny" },
+      allergens: { en:"Gluten, milk, eggs, nuts (pistachios)", fr:"Gluten, lait, œufs, fruits à coque (pistaches)", de:"Gluten, Milch, Eier, Nüsse (Pistazien)", es:"Gluten, leche, huevos, frutos secos (pistachos)", pl:"Gluten, mleko, jajka, orzechy (pistacje)" },
+      image: "/img/menu/desserts/strawberry-brioche-delight.webp"
+    },
+    {
+      title: { en:"Chocolate Hazelnut Bar", fr:"Barre Chocolat Noisette", de:"Schoko-Haselnuss-Riegel", es:"Barra de Chocolate y Avellanas", pl:"Czekoladowo-Orzechowy Baton" },
+      price: "£8.50",
+      description: { en:"Crunchy chocolate base with hazelnut praline, vanilla cream, fresh raspberries, raspberry gel, and a drizzle of caramel.", fr:"Base croustillante au chocolat, praliné noisette, crème vanille, framboises et caramel.", de:"Knuspriger Schokoladenboden mit Haselnuss-Praliné, Vanillecreme, Himbeeren und Karamell.", es:"Base de chocolate con praliné de avellanas, crema de vainilla, frambuesas y caramelo.", pl:"Chrupiąca baza czekoladowa z praliną orzechową, kremem waniliowym, malinami i karmelem." },
+      allergensTitle: { en:"Allergens", fr:"Allergènes", de:"Allergene", es:"Alérgenos", pl:"Alergeny" },
+      allergens: { en:"Milk, nuts (hazelnuts), gluten, eggs, soy", fr:"Lait, noisettes, gluten, œufs, soja", de:"Milch, Nüsse (Haselnüsse), Gluten, Eier, Soja", es:"Leche, avellanas, gluten, huevos, soja", pl:"Mleko, orzechy laskowe, gluten, jajka, soja" },
+      image: "/img/menu/desserts/chocolate-hazelnut-bar.webp"
+    },
+    {
+      title: { en:"Vanilla Twist Pastry", fr:"Pâtisserie Tressée à la Vanille", de:"Vanille-Zopfgebäck", es:"Pastel Trenzado de Vainilla", pl:"Waniliowa Plecionka" },
+      price: "£4.50",
+      description: { en:"Crispy buttery braided pastry with a sweet vanilla glaze. Perfect with coffee or a glass of cold milk.", fr:"Pâtisserie tressée croustillante au glaçage vanille. Parfait avec un café ou du lait froid.", de:"Knuspriges Zopfgebäck mit Vanilleguss. Perfekt zu Kaffee oder kalter Milch.", es:"Pastel trenzado con glaseado de vainilla. Perfecto con café o leche fría.", pl:"Chrupiąca plecionka z lukrem waniliowym. Idealna do kawy lub mleka." },
+      allergensTitle: { en:"Allergens", fr:"Allergènes", de:"Allergene", es:"Alérgenos", pl:"Alergeny" },
+      allergens: { en:"Gluten, milk, eggs", fr:"Gluten, lait, œufs", de:"Gluten, Milch, Eier", es:"Gluten, leche, huevos", pl:"Gluten, mleko, jajka" },
+      image: "/img/menu/desserts/vanilla-twist-pastry.webp"
+    }
+  ],
+  cocktails: [
+    {
+      title: { en:"Citrus Old Fashioned", fr:"Old Fashioned aux Agrumes", de:"Zitrus Old Fashioned", es:"Old Fashioned Cítrico", pl:"Citrus Old Fashioned" },
+      price: "£10.00",
+      description: { en:"A zesty twist on the classic: bourbon, orange liqueur, aromatic bitters, and citrus, served over ice with an orange peel garnish.", fr:"Bourbon, liqueur d'orange, bitters aromatiques et agrumes, sur glace avec zeste d'orange.", de:"Bourbon, Orangenlikör, aromatische Bitter und Zitrus auf Eis mit Orangenzeste.", es:"Bourbon, licor de naranja, amargos aromáticos y cítrico sobre hielo con piel de naranja.", pl:"Bourbon, likier pomarańczowy, bittersy i cytrusy na lodzie z twistem pomarańczy." },
+      notes: { en:"Contains alcohol", fr:"Contient de l'alcool", de:"Enthält Alkohol", es:"Contiene alcohol", pl:"Zawiera alkohol" },
+      image: "/img/menu/cocktails/citrus-old-fashioned.webp"
+    },
+    {
+      title: { en:"Espresso Martini", fr:"Martini Espresso", de:"Espresso Martini", es:"Martini de Espresso", pl:"Espresso Martini" },
+      price: "£11.00",
+      description: { en:"Smooth blend of vodka, coffee liqueur, and fresh espresso, shaken to a silky foam with a single coffee bean garnish.", fr:"Vodka, liqueur de café et espresso frais, secoués en mousse soyeuse avec un grain de café.", de:"Wodka, Kaffeelikör und Espresso zu seidigem Schaum geschüttelt, mit Kaffeebohne.", es:"Vodka, licor de café y espresso agitados hasta obtener espuma sedosa con un grano de café.", pl:"Wódka, likier kawowy i espresso wstrząśnięte do pianki z ziarnem kawy." },
+      notes: { en:"Contains alcohol & caffeine", fr:"Contient alcool et caféine", de:"Enthält Alkohol und Koffein", es:"Contiene alcohol y cafeína", pl:"Zawiera alkohol i kofeinę" },
+      image: "/img/menu/cocktails/espresso-martini.webp"
+    },
+    {
+      title: { en:"Violet Midnight", fr:"Minuit Violette", de:"Violette Mitternacht", es:"Medianoche Violeta", pl:"Violet Midnight" },
+      price: "£11.50",
+      description: { en:"A floral and bold creation with vodka, crème de violette, cold brew coffee, and vanilla liqueur, topped with violet petals.", fr:"Vodka, crème de violette, café cold brew et liqueur de vanille, garni de pétales de violette.", de:"Wodka, Crème de Violette, Cold Brew und Vanillelikör mit Veilchenblüten.", es:"Vodka, crème de violette, café cold brew y licor de vainilla con pétalos de violeta.", pl:"Wódka, crème de violette, kawa cold brew i likier waniliowy z płatkami fiołków." },
+      notes: { en:"Contains alcohol & caffeine", fr:"Contient alcool et caféine", de:"Enthält Alkohol und Koffein", es:"Contiene alcohol y cafeína", pl:"Zawiera alkohol i kofeinę" },
+      image: "/img/menu/cocktails/violet-midnight.webp"
+    }
+  ]
+};
+
+let currentLang = 'en';
+let currentCat = 'starters';
+
+const menuBody = document.getElementById('menuBody');
+const langSelect = document.getElementById('langSelect');
+const catBtns = document.querySelectorAll('.cat-btn');
+
+function t(obj) {
+  return obj?.[currentLang] || obj?.['en'] || '';
+}
+
+function renderShimmer() {
+  menuBody.innerHTML = [1,2,3].map(() => `
+    <div class="shimmer-card">
+      <div class="shimmer-img"></div>
+      <div class="shimmer-body">
+        <div class="shimmer-line m"></div>
+        <div class="shimmer-line s"></div>
+        <div class="shimmer-line" style="width:35%;margin-top:auto"></div>
+      </div>
+    </div>
+  `).join('');
+}
+
+function renderProducts(cat) {
+  renderShimmer();
+  setTimeout(() => {
+    const items = MENU[cat] || [];
+    const title = MENU.categoryLabels[cat]?.[currentLang] || cat;
+    const emoji = MENU.emojis[cat] || '';
+
+    let html = `<div class="menu-section-title">${title}</div><div class="product-list">`;
+
+    items.forEach((item, i) => {
+      const name = t(item.title);
+      const desc = t(item.description);
+      const allergenLabel = t(item.allergensTitle);
+      const allergens = t(item.allergens);
+      const notes = item.notes ? t(item.notes) : null;
+
+      html += `
+        <div class="product-card" data-index="${i}" style="animation-delay:${i * 0.06}s">
+          <div class="card-main">
+            <div class="card-img${item.image ? ' has-photo' : ''}" ${item.image ? `data-img="${item.image}"` : ''}>
+              ${item.image
+                ? `<img src="${item.image}" alt="${name}" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;min-height:90px;">`
+                : `<div class="card-img-placeholder"><span>${emoji}</span></div>`
+              }
+            </div>
+            <div class="card-info">
+              <div class="card-name">${name}</div>
+              <div class="card-desc-preview">${desc}</div>
+              <div class="card-bottom">
+                <span class="card-price">${item.price}</span>
+                <svg class="card-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 6l4 4 4-4"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="product-extra">
+            <p class="product-extra-desc">${desc}</p>
+            ${allergens ? `<div class="allergen-label">${allergenLabel}</div><span class="allergen-pill">⚠️ ${allergens}</span>` : ''}
+            ${notes ? `<br><span class="notes-pill">🍷 ${notes}</span>` : ''}
+          </div>
+        </div>
+      `;
+    });
+
+    html += '</div>';
+    menuBody.innerHTML = html;
+    menuBody.scrollTop = 0;
+
+    // toggle expand on click — but not if clicking the image
+    document.querySelectorAll('.product-card').forEach(card => {
+      card.addEventListener('click', (e) => {
+        if (e.target.closest('.card-img.has-photo')) return;
+        card.classList.toggle('open');
+      });
+    });
+
+    // image lightbox
+    document.querySelectorAll('.card-img.has-photo').forEach(imgWrap => {
+      imgWrap.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const src = imgWrap.dataset.img;
+        openLightbox(src);
+      });
+    });
+  }, 300);
+}
+
+function updateCatLabels() {
+  catBtns.forEach(btn => {
+    const cat = btn.dataset.cat;
+    btn.textContent = MENU.categoryLabels[cat]?.[currentLang] || cat;
+  });
+}
+
+catBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    catBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    currentCat = btn.dataset.cat;
+    renderProducts(currentCat);
+  });
+});
+
+langSelect.addEventListener('change', () => {
+  currentLang = langSelect.value;
+  updateCatLabels();
+  renderProducts(currentCat);
+});
+
+// Lightbox
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const lightboxClose = document.getElementById('lightbox-close');
+
+function openLightbox(src) {
+  lightboxImg.src = src;
+  lightbox.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox() {
+  lightbox.classList.remove('open');
+  document.body.style.overflow = '';
+  setTimeout(() => { lightboxImg.src = ''; }, 300);
+}
+lightbox.addEventListener('click', closeLightbox);
+lightboxClose.addEventListener('click', closeLightbox);
+lightboxImg.addEventListener('click', e => e.stopPropagation());
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+
+// init
+renderProducts('starters');
+
+(function() {
+  const COOKIE_KEY = 'carteo_cookie_consent';
+
+  function getConsent() {
+    return localStorage.getItem(COOKIE_KEY);
+  }
+
+  function setConsent(value) {
+    localStorage.setItem(COOKIE_KEY, value);
+  }
+
+  function loadAnalytics() {
+    // Google Analytics
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-5KJEZHHT15';
+    document.head.appendChild(s);
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    window.gtag = gtag;
+    gtag('js', new Date());
+    gtag('config', 'G-5KJEZHHT15');
+
+    // Meta Pixel
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window,document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '757895160046938');
+    fbq('track', 'PageView');
+  }
+
+  function hideBanner() {
+    document.getElementById('cookie-banner').classList.add('hidden');
+  }
+
+  function showBanner() {
+    document.getElementById('cookie-banner').classList.remove('hidden');
+  }
+
+  // On load — check existing consent
+  var consent = getConsent();
+  if (consent === 'accepted') {
+    loadAnalytics();
+  } else if (consent === 'declined') {
+    // do nothing — no tracking
+  } else {
+    // No choice made yet — show banner
+    showBanner();
+  }
+
+  document.getElementById('cookieAccept').addEventListener('click', function() {
+    setConsent('accepted');
+    hideBanner();
+    loadAnalytics();
+  });
+
+  document.getElementById('cookieDecline').addEventListener('click', function() {
+    setConsent('declined');
+    hideBanner();
+  });
+})();
+</script>
+</body>
+</html>

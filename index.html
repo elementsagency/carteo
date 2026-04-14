@@ -1,0 +1,1193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta name=”robots” content="index, follow">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="theme-color" content="#ffffff">
+    
+        <title>Carteo — Digital Menus for Restaurants, Fully Managed for You</title>
+        <meta name="description" content="Send us your menu and we'll design, translate and host it for you. QR code included. From £19/month. No setup fee, no tech skills needed.">
+        <meta name="author" content="Carteo">
+    
+        <meta property="og:title" content="Carteo — Digital Menus for Restaurants, Fully Managed for You">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://carteo.co.uk/">
+        <meta property="og:description" content="Send us your menu and we'll design, translate and host it for you. QR code included. From £19/month. No setup fee, no tech skills needed.">
+        <meta property="og:image" content="https://carteo.co.uk/img/carteo.webp">
+        <meta property="og:locale" content="en_GB">
+        <meta property="og:site_name" content="Carteo">
+
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="Carteo — Digital Menus for Restaurants, Fully Managed for You">
+        <meta name="twitter:description" content="Send us your menu and we'll design, translate and host it for you. QR code included. From £19/month. No setup fee, no tech skills needed.">
+        <meta name="twitter:image" content="https://carteo.co.uk/img/carteo.webp">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+
+<link rel="icon" href="/img/favicon/favicon.ico">
+<link rel="icon" href="/img/favicon/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/img/favicon/favicon.png">
+<link rel="preload" as="image" href="https://carteo.co.uk/img/logo/carteo-red.webp">
+
+<link rel="canonical" href="https://carteo.co.uk/"/>
+
+<style>
+:root {
+  --red: #E8372A;
+  --red-dark: #c42d21;
+  --red-light: #fdf0ef;
+  --ink: #1a1a18;
+  --muted: #6b6b67;
+  --border: #e8e8e4;
+  --bg: #fafaf8;
+  --white: #ffffff;
+  --radius: 14px;
+  --radius-sm: 8px;
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'DM Sans', sans-serif;
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --nav-h: 64px;
+  --container: 1200px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-body); background: var(--white); color: var(--ink); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+
+/* NAV — inner div matches container */
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; height: var(--nav-h); background: rgba(255,255,255,0.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); transition: box-shadow 0.3s; }
+nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.06); }
+.nav-inner { max-width: var(--container); margin: 0 auto; padding: 0 2rem; height: 100%; display: flex; align-items: center; justify-content: space-between; }
+.nav-logo { display: flex; align-items: center; gap: 8px; text-decoration: none; }
+.nav-logo img { height: 34px; width: auto; }
+.nav-logo-text { font-family: var(--font-display); font-size: 24px; font-weight: 500; color: var(--ink); letter-spacing: -0.02em; }
+.nav-links { display: flex; align-items: center; gap: 2rem; list-style: none; }
+.nav-links a { font-size: 14px; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+.nav-links a:hover { color: var(--ink); }
+.nav-cta { display: flex; align-items: center; }
+
+.btn { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-body); font-size: 14px; font-weight: 500; padding: 10px 22px; border-radius: 100px; text-decoration: none; cursor: pointer; border: none; transition: all 0.2s var(--ease); white-space: nowrap; }
+.btn-primary { background: var(--red); color: white; }
+.btn-primary:hover { background: var(--red-dark); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(232,55,42,0.3); }
+.btn-outline { background: transparent; color: var(--ink); border: 1.5px solid var(--border); }
+.btn-outline:hover { border-color: var(--ink); background: var(--bg); }
+.btn-lg { font-size: 16px; padding: 14px 32px; }
+.btn-ghost { background: transparent; color: var(--muted); padding: 10px 0; border-radius: 0; }
+.btn-ghost:hover { color: var(--ink); }
+
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
+.hamburger span { display: block; width: 22px; height: 1.5px; background: var(--ink); transition: all 0.3s; transform-origin: center; }
+.hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; transform: scale(0); }
+.hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+.mobile-menu { display: none; position: fixed; top: var(--nav-h); left: 0; right: 0; background: white; border-bottom: 1px solid var(--border); padding: 1.5rem 2rem; z-index: 99; flex-direction: column; }
+.mobile-menu.open { display: flex; }
+.mobile-menu a { font-size: 16px; color: var(--ink); text-decoration: none; padding: 0.75rem 0; border-bottom: 1px solid var(--border); }
+.mobile-menu a:last-child { border-bottom: none; color: var(--red); font-weight: 500; }
+
+/* LAYOUT */
+section { padding: 100px 2rem; }
+.container { max-width: var(--container); margin: 0 auto; }
+.section-label { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--red); margin-bottom: 1.25rem; }
+.section-label::before { content: ''; display: block; width: 20px; height: 1.5px; background: var(--red); }
+h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 400; letter-spacing: -0.02em; line-height: 1.15; color: var(--ink); }
+h1 { font-size: clamp(44px, 6vw, 76px); }
+h2 { font-size: clamp(32px, 4vw, 52px); }
+h3 { font-size: clamp(20px, 2.5vw, 26px); }
+h4 { font-size: 18px; }
+p { color: var(--muted); line-height: 1.75; }
+
+/* HERO */
+#hero { padding-top: 140px; padding-bottom: 80px; background: var(--white); position: relative; overflow: hidden; }
+.hero-bg-mark { position: absolute; top: -100px; right: -200px; width: 700px; height: 700px; border-radius: 50%; background: radial-gradient(circle, rgba(232,55,42,0.05) 0%, transparent 70%); pointer-events: none; }
+.hero-inner { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 4rem; align-items: center; }
+.hero-eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 500; color: var(--red); background: var(--red-light); padding: 6px 14px; border-radius: 100px; margin-bottom: 1.5rem; }
+/* headline forced 2 lines */
+.hero-headline { max-width: 580px; margin-bottom: 1.5rem; }
+.hero-headline em { font-style: italic; color: var(--red); }
+.hero-sub { font-size: 18px; color: var(--muted); max-width: 500px; margin-bottom: 2.5rem; line-height: 1.7; }
+.hero-actions { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem; }
+.hero-trust { display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
+.trust-item { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--muted); }
+.trust-dot { width: 6px; height: 6px; background: #22c55e; border-radius: 50%; }
+
+/* benefit badges — absolutely positioned around phone */
+.hero-visual { display: flex; justify-content: center; align-items: center; position: relative; min-height: 580px; }
+.phone-wrap { position: relative; z-index: 2; }
+.h-badge { background: white; border-radius: var(--radius); padding: 11px 13px; box-shadow: 0 8px 28px rgba(0,0,0,0.12); display: flex; align-items: center; gap: 10px; position: absolute; z-index: 3; min-width: 210px; }
+.h-badge-icon { font-size: 16px; width: 34px; height: 34px; background: var(--red-light); border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.h-badge strong { display: block; font-size: 12px; font-weight: 500; color: var(--ink); line-height: 1.2; }
+.h-badge span { font-size: 10px; color: var(--muted); }
+/* top right — overflows right edge a bit */
+.h-badge-1 { top: 20%; right: -40%; }
+/* left center */
+.h-badge-2 { top: 45%; left: -40%; transform: translateY(-50%); }
+/* bottom left, slightly in */
+.h-badge-3 { bottom: 15%; left: -20%; }
+.phone-frame { width: 270px; height: 540px; background: #1a1a18; border-radius: 40px; padding: 12px; box-shadow: 0 40px 80px rgba(0,0,0,0.2), inset 0 0 0 1px rgba(255,255,255,0.07); position: relative; flex-shrink: 0; }
+.phone-notch { position: absolute; top: 20px; left: 50%; transform: translateX(-50%); width: 76px; height: 22px; background: #1a1a18; border-radius: 11px; z-index: 10; }
+.phone-screen { width: 100%; height: 100%; border-radius: 30px; overflow: hidden; background: #f0ebe4; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; padding: 2.5rem 1.25rem 1.25rem; }
+.ph-logo { font-family: var(--font-display); font-size: 20px; color: var(--red); font-weight: 400; letter-spacing: -0.02em; margin-bottom: 1rem; }
+.ph-img { width: 100%; height: 110px; background: #d8d3cc; border-radius: 10px; margin-bottom: 1rem; }
+.ph-bar { width: 100%; height: 9px; background: #ddd; border-radius: 5px; margin-bottom: 6px; }
+.ph-bar.s { width: 60%; }
+.ph-bar.m { width: 78%; }
+.ph-divider { width: 100%; height: 1px; background: #e0dbd4; margin: 10px 0; }
+.ph-item { display: flex; gap: 8px; width: 100%; align-items: center; margin-bottom: 8px; }
+.ph-thumb { width: 44px; height: 36px; background: #cdc8c0; border-radius: 6px; flex-shrink: 0; }
+.ph-lines { flex: 1; display: flex; flex-direction: column; gap: 5px; }
+
+/* PROOF BAR — centered */
+#proof-bar { padding: 22px 2rem; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); background: var(--bg); }
+.proof-bar-inner { max-width: var(--container); margin: 0 auto; display: flex; align-items: center; justify-content: center; gap: 1.5rem; flex-wrap: wrap; }
+.proof-bar-label { font-size: 12px; color: var(--muted); white-space: nowrap; text-transform: uppercase; letter-spacing: 0.08em; flex-shrink: 0; }
+.proof-bar-divider { width: 1px; height: 18px; background: var(--border); flex-shrink: 0; }
+.proof-tags { display: flex; gap: 0.75rem; flex-wrap: wrap; justify-content: center; }
+.proof-tag { font-size: 13px; color: var(--muted); background: white; border: 1px solid var(--border); padding: 5px 14px; border-radius: 100px; }
+
+/* PROBLEM */
+#problem { background: var(--bg); }
+.problem-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; margin-top: 3rem; }
+.problem-cards { display: flex; flex-direction: column; gap: 1rem; }
+.problem-card { background: white; border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; display: flex; align-items: flex-start; gap: 1rem; transition: box-shadow 0.2s; }
+.problem-card:hover { box-shadow: 0 8px 30px rgba(0,0,0,0.06); }
+.problem-icon { font-size: 22px; width: 48px; height: 48px; background: var(--red-light); border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.problem-card h4 { font-family: var(--font-body); font-size: 15px; font-weight: 500; color: var(--ink); margin-bottom: 4px; }
+.problem-card p { font-size: 14px; }
+.problem-text h2 { margin-bottom: 1.25rem; }
+.problem-text p { font-size: 17px; margin-bottom: 1rem; }
+
+/* WHY */
+#why { background: var(--ink); }
+#why .section-label { color: #ff8a7e; }
+#why .section-label::before { background: #ff8a7e; }
+#why h2 { color: white; margin-bottom: 1rem; }
+#why > .container > p { color: rgba(255,255,255,0.5); font-size: 18px; max-width: 540px; margin-bottom: 3.5rem; }
+.why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5px; background: rgba(255,255,255,0.08); border-radius: var(--radius); overflow: hidden; }
+.why-item { background: var(--ink); padding: 2rem; transition: background 0.2s; }
+.why-item:hover { background: #1e1e1c; }
+.why-num { font-size: 11px; font-weight: 500; color: rgba(255,255,255,0.25); letter-spacing: 0.1em; margin-bottom: 1.25rem; }
+.why-icon { font-size: 26px; margin-bottom: 1rem; display: block; }
+.why-item h4 { font-family: var(--font-body); font-size: 16px; font-weight: 500; color: white; margin-bottom: 0.5rem; }
+.why-item p { font-size: 14px; color: rgba(255,255,255,0.5); line-height: 1.6; }
+
+/* WHO — 3 cols 2 rows */
+#who { background: var(--white); }
+.who-intro { max-width: 600px; margin-bottom: 3rem; }
+.who-intro h2 { margin-bottom: 1rem; }
+.who-intro p { font-size: 18px; }
+.audience-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 3rem; }
+.audience-card { border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; transition: all 0.2s; }
+.audience-card:hover { border-color: var(--red); background: var(--red-light); }
+.audience-card:hover .audience-card-icon { background: white; }
+.audience-card-icon { font-size: 22px; width: 48px; height: 48px; background: var(--bg); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; transition: background 0.2s; }
+.audience-card h4 { font-family: var(--font-body); font-size: 15px; font-weight: 500; color: var(--ink); margin-bottom: 4px; }
+.audience-card p { font-size: 13px; }
+/* centred especially box — full width bg */
+.who-especially-wrap { background: var(--bg); margin: 0; padding: 3rem 2rem; border-radius: var(--radius); }
+.who-especially { max-width: 680px; margin: 1rem; }
+.who-especially h4 { font-family: var(--font-body); font-size: 13px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 1.25rem; }
+.check-list { display: flex; flex-direction: column; gap: 0.75rem; list-style: none; }
+.check-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 15px; color: var(--ink); }
+.check-list li::before { content: '→'; color: var(--red); font-weight: 500; flex-shrink: 0; margin-top: 1px; }
+
+/* HOW */
+#how { background: var(--bg); }
+.how-header { text-align: center; max-width: 540px; margin: 0 auto 4rem; }
+.how-header h2 { margin-bottom: 1rem; }
+.steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; position: relative; align-items: stretch; }
+.steps::before { content: ''; position: absolute; top: 32px; left: 15%; right: 15%; height: 1px; background: linear-gradient(90deg, transparent, var(--border) 20%, var(--border) 80%, transparent); }
+.step { display: flex; flex-direction: column; background: white; border: 1px solid var(--border); border-radius: var(--radius); padding: 2rem; transition: box-shadow 0.2s, transform 0.2s; }
+.step:hover { box-shadow: 0 12px 40px rgba(0,0,0,0.08); transform: translateY(-3px); }
+.step-num { width: 40px; height: 40px; background: var(--red); color: white; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-weight: 500; font-size: 15px; margin-bottom: 1.25rem; position: relative; z-index: 1; }
+.step h3 { font-family: var(--font-body); font-size: 17px; font-weight: 500; color: var(--ink); margin-bottom: 0.75rem; }
+.step p { font-size: 14px; line-height: 1.7; margin-bottom: 1rem; }
+.step-sub { margin-top: auto; padding-top: 1rem; border-top: 1px solid var(--border); font-size: 12px; color: var(--muted); font-style: italic; }
+.how-cta { text-align: center; margin-top: 3rem; }
+
+/* DEMO */
+#demo { background: white; }
+.demo-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+.demo-text h2 { margin-bottom: 1.25rem; }
+.demo-text p { font-size: 17px; margin-bottom: 2rem; }
+/* demo trust pills */
+.demo-trust { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.5rem; }
+.demo-trust-item { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 500; color: var(--ink); background: var(--bg); padding: 7px 14px; border-radius: 100px; border: 1px solid var(--border); white-space: nowrap; }
+.demo-trust-item::before { content: '✓'; color: var(--red); font-weight: 700; }
+.demo-visual { display: flex; justify-content: center; align-items: center; }
+/* demo uses same phone-frame styles from hero, just slightly smaller */
+.demo-phone { width: 240px; height: 480px; background: #1a1a18; border-radius: 36px; padding: 10px; box-shadow: 0 40px 80px rgba(0,0,0,0.18), inset 0 0 0 1px rgba(255,255,255,0.07); position: relative; flex-shrink: 0; }
+.demo-phone-notch { position: absolute; top: 18px; left: 50%; transform: translateX(-50%); width: 68px; height: 20px; background: #1a1a18; border-radius: 10px; z-index: 10; }
+.demo-phone-screen { width: 100%; height: 100%; border-radius: 28px; overflow: hidden; background: #f0ebe4; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; padding: 2.5rem 1rem 1rem; }
+.demo-label { display: inline-flex; align-items: center; gap: 6px; margin-top: 1.5rem; font-size: 12px; color: var(--muted); background: var(--bg); border: 1px solid var(--border); border-radius: 100px; padding: 5px 14px; }
+
+/* PRICING */
+#pricing { background: var(--bg); }
+.pricing-header { text-align: center; max-width: 540px; margin: 0 auto 1rem; }
+.pricing-header h2 { margin-bottom: 1rem; }
+.pricing-header p { font-size: 17px; }
+.pricing-toggle { display: flex; align-items: center; justify-content: center; gap: 1rem; margin: 2rem 0 3rem; }
+.toggle-label { font-size: 14px; color: var(--muted); cursor: pointer; }
+.toggle-label.active { color: var(--ink); font-weight: 500; }
+/* toggle: grey when monthly, red bg when annual */
+.toggle-switch { width: 48px; height: 26px; background: #d0d0cc; border-radius: 100px; position: relative; cursor: pointer; flex-shrink: 0; transition: background 0.25s var(--ease); }
+.toggle-switch.annual { background: var(--red); }
+.toggle-knob { position: absolute; top: 3px; left: 3px; width: 20px; height: 20px; background: white; border-radius: 50%; transition: transform 0.25s var(--ease); box-shadow: 0 1px 4px rgba(0,0,0,0.2); }
+.toggle-switch.annual .toggle-knob { transform: translateX(22px); }
+.save-badge { font-size: 11px; font-weight: 500; background: #dcfce7; color: #15803d; padding: 2px 8px; border-radius: 100px; }
+.plans-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; align-items: start; }
+.plan-card { background: white; border: 1px solid var(--border); border-radius: var(--radius); padding: 2rem; transition: box-shadow 0.2s; }
+.plan-card:hover { box-shadow: 0 12px 40px rgba(0,0,0,0.08); }
+.plan-card.featured { border: 2px solid var(--red); position: relative; }
+.plan-badge { position: absolute; top: -13px; left: 50%; transform: translateX(-50%); font-size: 11px; font-weight: 500; background: var(--red); color: white; padding: 3px 14px; border-radius: 100px; white-space: nowrap; }
+.plan-name { font-family: var(--font-display); font-size: 24px; font-weight: 400; color: var(--ink); margin-bottom: 4px; }
+.plan-for { font-size: 13px; color: var(--muted); margin-bottom: 1.5rem; }
+.plan-price { margin-bottom: 0.25rem; }
+.plan-price .amount { font-size: 42px; font-weight: 300; color: var(--ink); letter-spacing: -0.03em; font-family: var(--font-display); }
+.plan-price .period { font-size: 14px; color: var(--muted); }
+.plan-annual { font-size: 12px; color: var(--muted); margin-bottom: 0.75rem; }
+.plan-trial { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: #15803d; background: #dcfce7; padding: 4px 10px; border-radius: 100px; margin-bottom: 1.5rem; }
+.plan-divider { border: none; border-top: 1px solid var(--border); margin: 1.25rem 0; }
+.plan-features { list-style: none; display: flex; flex-direction: column; gap: 0.625rem; margin-bottom: 1.75rem; }
+.plan-features li { font-size: 14px; color: var(--ink); display: flex; align-items: flex-start; gap: 8px; line-height: 1.5; }
+.plan-features li::before { content: '✓'; color: var(--red); font-weight: 500; flex-shrink: 0; font-size: 13px; margin-top: 1px; }
+.plan-cta { width: 100%; text-align: center; justify-content: center; }
+/* footnote left-aligned */
+.pricing-footnote { font-size: 12px; color: var(--muted); margin-top: 1.5rem; line-height: 1.7; text-align: left; }
+
+/* REVIEWS — equal height, author pinned to bottom */
+#reviews { background: white; }
+.reviews-header { margin-bottom: 3rem; }
+.reviews-header h2 { margin-bottom: 0.5rem; }
+.reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; align-items: stretch; }
+.review-card { border: 1px solid var(--border); border-radius: var(--radius); padding: 1.75rem; display: flex; flex-direction: column; transition: box-shadow 0.2s; }
+.review-card:hover { box-shadow: 0 8px 30px rgba(0,0,0,0.06); }
+.stars { color: #f59e0b; font-size: 14px; margin-bottom: 1rem; letter-spacing: 2px; }
+.review-text { font-size: 15px; color: var(--ink); line-height: 1.7; font-style: italic; flex: 1; margin-bottom: 1rem; }
+/* author always at bottom */
+.review-author { display: flex; align-items: center; gap: 10px; margin-top: auto; padding-top: 1rem; border-top: 1px solid var(--border); }
+.review-avatar { width: 36px; height: 36px; border-radius: 50%; background: var(--red-light); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 500; color: var(--red); flex-shrink: 0; }
+.review-author-info .name { font-size: 14px; font-weight: 500; color: var(--ink); }
+.review-author-info .role { font-size: 12px; color: var(--muted); }
+
+/* FAQ */
+#faq { background: var(--bg); }
+.faq-inner { display: grid; grid-template-columns: 1fr 1.6fr; gap: 5rem; align-items: start; }
+.faq-left h2 { margin-bottom: 1rem; }
+.faq-left p { font-size: 17px; margin-bottom: 2rem; }
+.faq-list { display: flex; flex-direction: column; }
+.faq-item { border-bottom: 1px solid var(--border); }
+.faq-item:first-child { border-top: 1px solid var(--border); }
+.faq-q { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1.25rem 0; cursor: pointer; font-size: 15px; font-weight: 500; color: var(--ink); background: none; border: none; width: 100%; text-align: left; font-family: var(--font-body); transition: color 0.2s; }
+.faq-q:hover { color: var(--red); }
+.faq-icon { width: 20px; height: 20px; border-radius: 50%; border: 1.5px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 14px; color: var(--muted); flex-shrink: 0; transition: all 0.2s; }
+.faq-item.open .faq-icon { background: var(--red); border-color: var(--red); color: white; transform: rotate(45deg); }
+.faq-a { display: none; padding: 0 0 1.25rem; font-size: 14px; color: var(--muted); line-height: 1.75; }
+.faq-item.open .faq-a { display: block; }
+
+/* CONTACT */
+#contact { background: var(--ink); text-align: center; }
+#contact .section-label { color: #ff8a7e; }
+#contact .section-label::before { background: #ff8a7e; }
+#contact h2 { color: white; margin-bottom: 1rem; }
+.contact-sub { font-size: 18px; color: rgba(255,255,255,0.5); max-width: 560px; margin: 0 auto 3rem; }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; max-width: 800px; margin: 0 auto; text-align: left; }
+.contact-form-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: var(--radius); padding: 2rem; }
+.contact-form-card h3 { font-family: var(--font-body); font-size: 16px; font-weight: 500; color: white; margin-bottom: 1.25rem; }
+.form-group { margin-bottom: 1rem; }
+.form-group label { display: block; font-size: 12px; color: rgba(255,255,255,0.4); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.06em; }
+.form-group input, .form-group select, .form-group textarea { width: 100%; padding: 10px 14px; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); border-radius: var(--radius-sm); font-family: var(--font-body); font-size: 14px; color: white; outline: none; transition: border-color 0.2s; -webkit-appearance: none; }
+.form-group input::placeholder, .form-group textarea::placeholder { color: rgba(255,255,255,0.25); }
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: rgba(232,55,42,0.6); background: rgba(255,255,255,0.09); }
+.form-group select option { background: var(--ink); }
+.form-group textarea { resize: vertical; min-height: 90px; }
+.form-submit { width: 100%; justify-content: center; margin-top: 0.5rem; font-size: 15px; padding: 13px; }
+.form-privacy { font-size: 12px; color: rgba(255,255,255,0.25); text-align: center; margin-top: 0.75rem; }
+.contact-side { display: flex; flex-direction: column; gap: 1rem; }
+.contact-side-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: var(--radius); padding: 1.5rem; }
+.contact-side-card h4 { font-family: var(--font-body); font-size: 14px; font-weight: 500; color: white; margin-bottom: 0.5rem; }
+.contact-side-card p { font-size: 13px; color: rgba(255,255,255,0.4); margin-bottom: 1rem; }
+.btn-whatsapp { background: #25d366; color: white; width: 100%; justify-content: center; }
+.btn-whatsapp:hover { background: #1fb85a; box-shadow: 0 4px 16px rgba(37,211,102,0.3); transform: translateY(-1px); }
+.contact-details { display: flex; flex-direction: column; gap: 0.75rem; }
+
+.f-invalid { border-color: #ef4444 !important; background: rgba(239,68,68,0.12) !important; box-shadow: 0 0 0 3px rgba(239,68,68,0.2) !important; }
+.f-invalid:focus { border-color: #ef4444 !important; outline: none; }
+.form-group input:-webkit-autofill,
+.form-group input:-webkit-autofill:hover,
+.form-group input:-webkit-autofill:focus,
+.form-group select:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px rgba(255,255,255,0.07) inset !important;
+  -webkit-text-fill-color: white !important;
+  caret-color: white;
+  border-color: rgba(255,255,255,0.12) !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* brighter icons */
+.contact-detail { display: flex; align-items: center; gap: 10px; font-size: 14px; color: rgba(255,255,255,0.7); }
+.contact-detail .cd-icon { font-size: 18px; }
+
+/* FOOTER */
+footer { background: var(--ink); border-top: 1px solid rgba(255,255,255,0.1); padding: 0; height: var(--nav-h); }
+.footer-inner { max-width: var(--container); margin: 0 auto; padding: 0 2rem; height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 2.5rem; flex-wrap: wrap; }
+.footer-logo { display: flex; align-items: center; gap: 8px; text-decoration: none; }
+.footer-logo img { height: 34px; width: auto; }
+.footer-logo-text { font-family: var(--font-display); font-size: 20px; font-weight: 400; color: white; letter-spacing: -0.02em; }
+.footer-links { display: flex; gap: 1.5rem; list-style: none; flex-wrap: wrap;}
+.footer-links a { font-size: 14px; color: rgba(255,255,255,0.35); text-decoration: none; transition: color 0.2s; }
+.footer-links a:hover { color: rgba(255,255,255,0.7); }
+.footer-copy { font-size: 14px; color: rgba(255,255,255,0.2); white-space: nowrap; }
+
+/* ANIMATIONS */
+@keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+.fade-up { opacity: 0; animation: fadeUp 0.7s var(--ease) forwards; }
+.fade-up.d1 { animation-delay: 0.1s; } .fade-up.d2 { animation-delay: 0.2s; } .fade-up.d3 { animation-delay: 0.3s; } .fade-up.d4 { animation-delay: 0.4s; }
+
+/* TABLET 1024 */
+@media (max-width: 1024px) {
+  section { padding: 80px 3rem; }
+  #proof-bar { padding: 22px 3rem; }
+  .who-especially-wrap { margin: 0; padding: 3rem; }
+  .hero-inner { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+  .plans-grid { grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+  .plans-grid .plan-card { padding: 1.5rem; }
+  .audience-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* MOBILE 900 */
+@media (max-width: 900px) {
+  .nav-inner { padding: 0 1.5rem; }
+  .nav-links { display: none; }
+  .nav-cta .btn-primary { display: none; }
+  .hamburger { display: flex; }
+  section { padding: 64px 1.5rem; }
+  #proof-bar { padding: 16px 1.5rem; }
+  h1 { font-size: clamp(36px, 9vw, 54px); }
+  .hero-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+  .hero-headline { max-width: 100%; }
+  .hero-sub { max-width: 100%; font-size: 16px; }
+  .hero-actions { justify-content: flex-start; }
+  .hero-trust { justify-content: flex-start; }
+  .hero-visual { align-items: center; }
+  .phone-frame { width: 210px; height: 420px; }
+  .ph-img { height: 80px; }
+  .proof-bar-inner { flex-direction: column; gap: 0.75rem; }
+  .proof-bar-label { text-align: center; }
+  .proof-bar-divider { display: none; }
+  .proof-tags { justify-content: center; }
+  .problem-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .why-grid { grid-template-columns: 1fr 1fr; }
+  /* WHO: 1 col on mobile */
+  .audience-grid { grid-template-columns: 1fr 1fr; }
+  .who-especially-wrap { margin: 0; padding: 2.5rem 1.5rem; }
+  .steps { grid-template-columns: 1fr; }
+  .steps::before { display: none; }
+  .demo-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+  .demo-phone { width: 200px; height: 400px; }
+  .plans-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
+  .reviews-grid { grid-template-columns: 1fr; }
+  .faq-inner { grid-template-columns: 1fr; gap: 2rem; }
+  .contact-grid { grid-template-columns: 1fr; max-width: 500px; }
+  .contact-sub { font-size: 16px; }
+footer { height: auto; padding: 1.5rem 0; }
+  .footer-inner { flex-direction: column; align-items: center; gap: 1rem; text-align: center; }
+  .footer-links { flex-direction: column; gap: 0.5rem; align-items: center; }
+  .h-badge-1 { top: 20%; right: -80%; }
+  /* left center */
+  .h-badge-2 { top: 45%; left: -60%; transform: translateY(-50%); }
+  /* bottom left, slightly in */
+  .h-badge-3 { bottom: 15%; left: -50%; }
+  }
+
+/* TABLET 768 */
+@media (max-width: 768px) {
+  .demo-trust { flex-wrap: wrap; }
+  .hero-actions { justify-content: flex-start; }
+  footer { height: auto; padding: 1.5rem 0; }
+  .footer-inner { flex-direction: column; align-items: center; gap: 1rem; text-align: center; }
+  .footer-links { flex-direction: column; gap: 0.5rem; align-items: center; margin: 1rem 0;}
+}
+
+/* SMALL MOBILE 480 */
+@media (max-width: 480px) {
+  section { padding: 56px 1.25rem; }
+  .why-grid { grid-template-columns: 1fr; }
+  .who-especially-wrap { margin: 0; padding: 2rem 1.25rem; }
+  .h-badge { display: none; }
+  .hero-actions { justify-content: center; }
+  .hero-trust { justify-content: center; }
+  .audience-grid { grid-template-columns: 1fr; }
+}
+
+#cookie-banner {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  width: calc(100% - 3rem);
+  max-width: 620px;
+  background: var(--ink);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.2);
+  animation: cookieSlideUp 0.4s var(--ease) forwards;
+}
+#cookie-banner.hidden {
+  display: none;
+}
+@keyframes cookieSlideUp {
+  from { opacity: 0; transform: translateX(-50%) translateY(20px); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+.cookie-text {
+  flex: 1;
+  min-width: 200px;
+}
+.cookie-text p {
+  font-size: 13px;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.6;
+  margin: 0;
+}
+.cookie-text a {
+  color: rgba(255,255,255,0.9);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.cookie-text a:hover { color: white; }
+.cookie-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+.cookie-btn {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  padding: 8px 18px;
+  border-radius: 100px;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s var(--ease);
+  white-space: nowrap;
+}
+.cookie-btn-accept {
+  background: var(--red);
+  color: white;
+}
+.cookie-btn-accept:hover {
+  background: var(--red-dark);
+  box-shadow: 0 4px 14px rgba(232,55,42,0.4);
+}
+.cookie-btn-decline {
+  background: transparent;
+  color: rgba(255,255,255,0.5);
+  border: 1px solid rgba(255,255,255,0.15);
+}
+.cookie-btn-decline:hover {
+  color: white;
+  border-color: rgba(255,255,255,0.4);
+}
+@media (max-width: 500px) {
+  #cookie-banner {
+    bottom: 1rem;
+    width: calc(100% - 2rem);
+    padding: 1rem 1.25rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .cookie-actions { width: 100%; }
+  .cookie-btn { flex: 1; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<div id="cookie-banner" class="hidden" role="dialog" aria-label="Cookie consent">
+  <div class="cookie-text">
+    <p>We use cookies for analytics and advertising. See our <a href="/privacy/">Privacy Policy</a> for details.</p>
+  </div>
+  <div class="cookie-actions">
+    <button class="cookie-btn cookie-btn-decline" id="cookieDecline">Decline</button>
+    <button class="cookie-btn cookie-btn-accept" id="cookieAccept">Accept</button>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <img src="/img/logo/carteo-red.webp" alt="Carteo logo"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <span class="nav-logo-text" style="display:none">Carteo</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/#how">How it works</a></li>
+      <li><a href="/#pricing">Pricing</a></li>
+      <li><a href="/demo/">Demo</a></li>
+      <li><a href="/#faq">FAQ</a></li>
+      <li><a href="/#contact">Contact</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="/#contact" class="btn btn-primary">Get started free</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="/#how" onclick="closeMobile()">How it works</a>
+  <a href="/#pricing" onclick="closeMobile()">Pricing</a>
+  <a href="/demo/" onclick="closeMobile()">Demo</a>
+  <a href="/#faq" onclick="closeMobile()">FAQ</a>
+  <a href="/#contact" onclick="closeMobile()">Get started free →</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg-mark"></div>
+  <div class="container">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-eyebrow fade-up">✦ Digital menus, fully managed for you</div>
+        <h1 class="hero-headline fade-up d1">Your menu, <em>online.</em> We handle everything.</h1>
+        <p class="hero-sub fade-up d2">Send us your menu. We design it, translate it, and set it all up — then your guests scan a QR code and browse instantly. No tech skills needed.</p>
+        <div class="hero-actions fade-up d3">
+          <a href="/#contact" class="btn btn-primary btn-lg">Start free — first month on us →</a>
+          <a href="/demo/" class="btn btn-ghost">See live demo ↓</a>
+        </div>
+        <div class="hero-trust fade-up d4">
+          <div class="trust-item"><span class="trust-dot"></span>No setup fee</div>
+          <div class="trust-item"><span class="trust-dot"></span>No card needed</div>
+          <div class="trust-item"><span class="trust-dot"></span>Ready in 3–5 days</div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="phone-wrap">
+          <div class="phone-frame">
+            <div class="phone-notch"></div>
+          <div class="phone-screen" style="padding:0;">
+            <img src="/img/hero-phone.webp" alt="Carteo digital menu" style="width:100%;height:100%;object-fit:cover;object-position:top;">
+          </div>
+          </div>
+          <!-- badge top right -->
+          <!-- <div class="h-badge h-badge-1">
+            <div class="h-badge-icon">🍽</div>
+            <div>
+              <strong>Easier choice, faster turnover</strong>
+              <span>Guests browse & decide quicker</span>
+            </div>
+          </div> -->
+          <!-- badge left center -->
+          <!-- <div class="h-badge h-badge-2">
+            <div class="h-badge-icon">💷</div>
+            <div>
+              <strong>From £19 / month</strong>
+              <span>Less than one reprint</span>
+            </div>
+          </div> -->
+          <!-- badge bottom left -->
+          <!-- <div class="h-badge h-badge-3">
+            <div class="h-badge-icon">😌</div>
+            <div>
+              <strong>No stress, no headaches</strong>
+              <span>We manage everything for you</span>
+            </div>
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF BAR -->
+<div id="proof-bar">
+  <div class="proof-bar-inner">
+    <span class="proof-bar-label">Works for</span>
+    <div class="proof-bar-divider"></div>
+    <div class="proof-tags">
+      <span class="proof-tag">☕ Cafes</span>
+      <span class="proof-tag">🍽 Restaurants</span>
+      <span class="proof-tag">🥡 Takeaways</span>
+      <span class="proof-tag">🚚 Food trucks</span>
+      <span class="proof-tag">🏨 Hotels</span>
+      <span class="proof-tag">🌍 Worldwide</span>
+    </div>
+  </div>
+</div>
+
+<!-- PROBLEM -->
+<section id="problem">
+  <div class="container">
+    <div class="problem-grid">
+      <div class="problem-text">
+        <div class="section-label">The problem</div>
+        <h2>Still reprinting menus every time something changes?</h2>
+        <p>Running a restaurant is hard enough. Paper menus make it harder — they're expensive, impossible for tourists to read, and out of date the moment prices change.</p>
+        <p>There's a better way. And you don't need to figure it out yourself.</p>
+        <a href="/#contact" class="btn btn-primary" style="margin-top:1.5rem">Fix it with Carteo →</a>
+      </div>
+      <div class="problem-cards">
+        <div class="problem-card">
+          <div class="problem-icon">💸</div>
+          <div>
+            <h4>Costly reprints</h4>
+            <p>Every price change means another bill at the printers. It adds up fast, especially with seasonal menus.</p>
+          </div>
+        </div>
+        <div class="problem-card">
+          <div class="problem-icon">🌍</div>
+          <div>
+            <h4>Language barriers</h4>
+            <p>International guests struggle with menus they can't read — and leave without ordering their best dish.</p>
+          </div>
+        </div>
+        <div class="problem-card">
+          <div class="problem-icon">📄</div>
+          <div>
+            <h4>Always out of date</h4>
+            <p>Sold out? New dish? Special today? Paper menus can't keep up with a real, busy kitchen.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section id="why">
+  <div class="container">
+    <div class="section-label">Why Carteo</div>
+    <h2>We don't just give you software —<br>we do it for you</h2>
+    <p>Most tools expect you to learn a dashboard and manage everything yourself. Carteo is different. You send us your menu — we handle the rest.</p>
+    <div class="why-grid">
+      <div class="why-item"><div class="why-num">01</div><span class="why-icon">✏️</span><h4>We design it for you</h4><p>A clean, professional menu that matches your style — no templates to wrestle with.</p></div>
+      <div class="why-item"><div class="why-num">02</div><span class="why-icon">🌐</span><h4>We translate it</h4><p>Your menu in up to 8 languages. Every guest feels welcome, wherever they're from.</p></div>
+      <div class="why-item"><div class="why-num">03</div><span class="why-icon">📱</span><h4>Guests scan & browse instantly</h4><p>A simple QR code on the table. They scan, they see the full menu. No app needed.</p></div>
+      <div class="why-item"><div class="why-num">04</div><span class="why-icon">🔄</span><h4>Updates handled for you</h4><p>Need to change a price or add a dish? Just message us — we'll sort it.</p></div>
+      <div class="why-item"><div class="why-num">05</div><span class="why-icon">💬</span><h4>Always someone to message</h4><p>Got a problem? We're on WhatsApp. No tickets, no call centres, no waiting.</p></div>
+      <div class="why-item"><div class="why-num">06</div><span class="why-icon">🔒</span><h4>Hosted & maintained</h4><p>We handle hosting and keep everything running. Nothing for you to manage.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO -->
+<section id="who">
+  <div class="container">
+    <div class="who-intro">
+      <div class="section-label">Who it's for</div>
+      <h2>Built for busy food businesses — big and small</h2>
+      <p>If you serve food and want your guests to have a better experience, Carteo is for you. We handle the tech so you can focus on the food.</p>
+    </div>
+    <div class="audience-grid">
+      <div class="audience-card"><div class="audience-card-icon">🍽</div><h4>Independent restaurants</h4><p>Look as polished as the big chains, without the big budget.</p></div>
+      <div class="audience-card"><div class="audience-card-icon">☕</div><h4>Cafes & coffee shops</h4><p>Update your daily specials and seasonal drinks in minutes.</p></div>
+      <div class="audience-card"><div class="audience-card-icon">🥡</div><h4>Takeaways</h4><p>A clean digital menu that loads fast and works on every phone.</p></div>
+      <div class="audience-card"><div class="audience-card-icon">🚚</div><h4>Food trucks</h4><p>No counter space? A QR code on the window solves everything.</p></div>
+      <div class="audience-card"><div class="audience-card-icon">🏨</div><h4>Hotels & B&Bs</h4><p>Room service menus and dining options — in your guests' language.</p></div>
+      <div class="audience-card"><div class="audience-card-icon">🌍</div><h4>Tourist-area venues</h4><p>Serve international guests confidently with multilingual menus.</p></div>
+    </div>
+    <div class="who-especially-wrap">
+      <div class="who-especially">
+        <h4>Especially useful if you…</h4>
+        <ul class="check-list">
+          <li>Get visitors who don't speak English</li>
+          <li>Change prices or dishes regularly</li>
+          <li>Are tired of paying for reprints</li>
+          <li>Want to look more professional without spending a fortune</li>
+          <li>Have never had a digital menu but know you should</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW -->
+<section id="how">
+  <div class="container">
+    <div class="how-header">
+      <div class="section-label">How it works</div>
+      <h2>Three steps. We do most of them.</h2>
+      <p>The whole process is designed so you do as little as possible.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>You send us your menu</h3>
+        <p>A photo, a PDF, a Word doc, a WhatsApp message. Whatever you have. Add photos and let us know your colours and style preferences.</p>
+        <p class="step-sub">That's your job done.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>We design, translate & build</h3>
+        <p>We turn your menu into a beautiful, mobile-first digital menu. We apply your branding, translate it into the languages you need, and set up hosting.</p>
+        <p class="step-sub">No back-and-forth. No dashboards. We handle it all.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>You get your QR code</h3>
+        <p>We send you a QR code — ready to print and place on tables. Guests scan it and your menu is right there on their phone.</p>
+        <p class="step-sub">Most menus live within 3–5 days of receiving your content.</p>
+      </div>
+    </div>
+    <div class="how-cta">
+      <a href="/#contact" class="btn btn-primary btn-lg">Start free — first month on us →</a>
+    </div>
+  </div>
+</section>
+
+<!-- DEMO -->
+<section id="demo">
+  <div class="container">
+    <div class="demo-inner">
+      <div class="demo-text">
+        <div class="section-label">Live demo</div>
+        <h2>See what your guests will see</h2>
+        <p>Open the live demo and browse a real digital menu — exactly as your customers would at the table. No login. No download. Just scan or click.</p>
+        <a href="/demo/" target="_blank" class="btn btn-primary btn-lg">View live demo →</a>
+      </div>
+      <div class="demo-visual">
+        <div style="display:flex;flex-direction:column;align-items:center;gap:1rem;">
+          <div class="demo-phone">
+            <div class="demo-phone-notch"></div>
+            <div class="demo-phone-screen" style="padding:0;">
+              <video autoplay loop muted playsinline style="width:100%;height:100%;object-fit:cover;object-position:top;">
+                <source src="/img/demo-video.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing">
+  <div class="container">
+    <div class="pricing-header">
+      <div class="section-label">Pricing</div>
+      <h2>Simple pricing. No surprises.</h2>
+      <p>No setup fee. No contracts. Cancel anytime. First month completely free.</p>
+    </div>
+    <div class="pricing-toggle">
+      <span class="toggle-label active" id="monthlyLabel">Monthly</span>
+      <div class="toggle-switch" id="billingToggle"><div class="toggle-knob"></div></div>
+      <span class="toggle-label" id="annualLabel">Annual <span class="save-badge">Save ~2 months</span></span>
+    </div>
+    <div class="plans-grid">
+      <div class="plan-card">
+        <p class="plan-name">Essential</p>
+        <p class="plan-for">Small cafes, takeaways & food trucks</p>
+        <div class="plan-price"><span class="amount" id="essentialPrice">£19</span><span class="period"> / month</span></div>
+        <p class="plan-annual" id="essentialAnnual">or £190 / year — save £38</p>
+        <div class="plan-trial">✓ First month free · no card needed</div>
+        <hr class="plan-divider">
+        <ul class="plan-features">
+          <li>Up to 50 menu items</li>
+          <li>Up to 3 languages</li>
+          <li>Template design — custom colours, fonts & buttons</li>
+          <li>QR code included</li>
+          <li>Hosted on carteo.co.uk/your-restaurant</li>
+          <li>2 updates per month</li>
+          <li>WhatsApp support</li>
+        </ul>
+        <a href="/#contact" class="btn btn-outline plan-cta">Start free with Essential →</a>
+      </div>
+      <div class="plan-card featured">
+        <div class="plan-badge">Most popular</div>
+        <p class="plan-name">Pro</p>
+        <p class="plan-for">Restaurants & branded venues</p>
+        <div class="plan-price"><span class="amount" id="proPrice">£29</span><span class="period"> / month</span></div>
+        <p class="plan-annual" id="proAnnual">or £290 / year — save £58</p>
+        <div class="plan-trial">✓ First month free · no card needed</div>
+        <hr class="plan-divider">
+        <ul class="plan-features">
+          <li>Up to 150 menu items</li>
+          <li>Up to 8 languages</li>
+          <li>Custom design — brand colours, layout & style</li>
+          <li>QR code included</li>
+          <li>Hosted on your domain or carteo.co.uk</li>
+          <li>5 updates per month</li>
+          <li>Priority WhatsApp support</li>
+        </ul>
+        <a href="/#contact" class="btn btn-primary plan-cta">Start free with Pro →</a>
+      </div>
+      <div class="plan-card">
+        <p class="plan-name">Add-ons</p>
+        <p class="plan-for">Enhance your menu as you grow</p>
+        <hr class="plan-divider" style="margin-top:0">
+        <ul class="plan-features">
+          <li>Extra language — £35 one-time</li>
+          <li>Extra update request — £12 each</li>
+          <li>Full menu redesign — from £79</li>
+          <li>Custom domain setup — £25 one-time</li>
+          <li>Restaurant website — from £499</li>
+          <li>Food photography (UK) — from £199</li>
+        </ul>
+        <a href="/#contact" class="btn btn-outline plan-cta">Ask about extras →</a>
+      </div>
+    </div>
+    <p class="pricing-footnote">* One update = one batch of changes sent together. Price changes, text edits, image swaps all count as minor updates. Structural redesigns quoted separately. Annual plans billed upfront. Hosting on carteo.co.uk/your-name or your own domain (£25 setup).</p>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews">
+  <div class="container">
+    <div class="reviews-header">
+      <div class="section-label">Reviews</div>
+      <h2>Restaurants that made the switch</h2>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">"We used to reprint our menus every few weeks. Now I just message Carteo and it's done. Honestly wish we'd done this sooner."</p>
+        <div class="review-author">
+          <div class="review-avatar">MS</div>
+          <div class="review-author-info"><p class="name">Maria S.</p><p class="role">Owner · Casa del Sol, London</p></div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">"A lot of our customers are tourists who struggled with the English menu. Since going digital with translations, so many more people order confidently."</p>
+        <div class="review-author">
+          <div class="review-avatar">AK</div>
+          <div class="review-author-info"><p class="name">Ahmed K.</p><p class="role">Manager · Spice Garden, Manchester</p></div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">"The setup was so easy — I sent them my menu on WhatsApp and a few days later it was live. Exactly what a small café like mine needed."</p>
+        <div class="review-author">
+          <div class="review-avatar">SB</div>
+          <div class="review-author-info"><p class="name">Sophie B.</p><p class="role">Owner · The Little Cup, Bristol</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="container">
+    <div class="faq-inner">
+      <div class="faq-left">
+        <div class="section-label">FAQ</div>
+        <h2>Still unsure?</h2>
+        <p>Here are the questions we get asked most. If yours isn't here, just message us on WhatsApp.</p>
+        <a href="/#contact" class="btn btn-primary">Get in touch →</a>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item"><button class="faq-q">Do I need any technical skills? <span class="faq-icon">+</span></button><div class="faq-a">Not at all. You send us your menu — a photo, a document, even a voice note — and we handle the design, translations, hosting and QR code. There's nothing for you to set up or manage.</div></div>
+        <div class="faq-item"><button class="faq-q">How long does it take to go live? <span class="faq-icon">+</span></button><div class="faq-a">Most menus are ready within 3–5 working days of us receiving your content. If you need it faster, get in touch and we'll do our best.</div></div>
+        <div class="faq-item"><button class="faq-q">What counts as an "update"? <span class="faq-icon">+</span></button><div class="faq-a">An update is one batch of changes — changing a few prices, adding a dish, or swapping a photo. Send everything in one message and we'll sort it all at once. Full redesigns are quoted separately.</div></div>
+        <div class="faq-item"><button class="faq-q">Can I add more languages later? <span class="faq-icon">+</span></button><div class="faq-a">Yes. You can add extra languages at any time for a one-time fee of £35 per language. Your plan already includes 3 (Essential) or 8 (Pro) from the start.</div></div>
+        <div class="faq-item"><button class="faq-q">Do guests need to download an app? <span class="faq-icon">+</span></button><div class="faq-a">No. They scan the QR code with their phone camera — that's it. The menu opens straight in their browser. No app, no login, no friction.</div></div>
+        <div class="faq-item"><button class="faq-q">Do I need my own domain or website? <span class="faq-icon">+</span></button><div class="faq-a">No. We host your menu on carteo.co.uk/your-restaurant-name at no extra cost. If you'd like your own domain, we can set that up for a one-time fee of £25.</div></div>
+        <div class="faq-item"><button class="faq-q">What happens if I have a problem? <span class="faq-icon">+</span></button><div class="faq-a">Message us on WhatsApp. We reply within a few hours and fix issues the same day where possible. No support tickets. No call centres.</div></div>
+        <div class="faq-item"><button class="faq-q">Can I cancel anytime? <span class="faq-icon">+</span></button><div class="faq-a">Yes. No contracts, no cancellation fees. Monthly subscribers can cancel before the next billing date. Annual plans aren't refunded mid-year, but you can pause if needed.</div></div>
+        <div class="faq-item"><button class="faq-q">Is this available outside the UK? <span class="faq-icon">+</span></button><div class="faq-a">Yes — we work with restaurants worldwide. Pricing is in GBP and WhatsApp support works anywhere. Photography is UK-only for now.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="section-label">Get started</div>
+    <h2>Ready to get your digital menu?</h2>
+    <p class="contact-sub">Send us a message and we'll have your menu live within a week. First month is completely free — no card needed.</p>
+    <div class="contact-grid">
+<div class="contact-form-card">
+  <h3>Tell us about your restaurant</h3>
+  <form id="carteoForm" novalidate>
+    <div class="form-group"><label>Your name *</label><input type="text" id="f-name" required placeholder="Jane Smith"></div>
+    <div class="form-group"><label>Email address *</label><input type="email" id="f-email" required placeholder="jane@myrestaurant.co.uk"></div>
+    <div class="form-group"><label>Restaurant / business name *</label><input type="text" id="f-restaurant" required placeholder="The Blue Table"></div>
+    <div class="form-group"><label>Country *</label><input type="text" id="f-country" required placeholder="United Kingdom"></div>
+    <div class="form-group">
+      <label>Which plan interests you?</label>
+      <select id="f-plan">
+        <option value="">— Select —</option>
+        <option value="Essential — £19/month">Essential — £19/month</option>
+        <option value="Pro — £29/month">Pro — £29/month</option>
+        <option value="Not sure yet">Not sure yet</option>
+      </select>
+    </div>
+    <div class="form-group"><label>Anything else? (optional)</label><textarea id="f-message" placeholder="Cuisine type, rough number of items, any questions..."></textarea></div>
+    <button type="submit" class="btn btn-primary form-submit">Send my details →</button>
+    <div id="f-success" style="display:none;background:#dcfce7;border:1px solid #bbf7d0;border-radius:10px;padding:1rem 1.25rem;margin-top:1rem;text-align:center;">
+      <p style="color:#15803d;font-size:14px;font-weight:500;margin:0;">✓ Message sent! We'll be in touch within a few hours.</p>
+    </div>
+    <div id="f-error" style="display:none;background:#fef2f2;border:1px solid #fecaca;border-radius:10px;padding:1rem 1.25rem;margin-top:1rem;text-align:center;">
+      <p style="color:#dc2626;font-size:14px;font-weight:500;margin:0;">Please fill in all required fields.</p>
+    </div>
+    <p class="form-privacy">We'll never share your details. We only use them to get back to you about your menu.</p>
+  </form>
+</div>
+      <div class="contact-side">
+        <div class="contact-side-card">
+          <h4>Prefer WhatsApp?</h4>
+          <p>Message us directly for a faster response. Usually replies within a few hours.</p>
+          <a href="https://wa.me/447307051979?text=Hi%2C%20I%27m%20contacting%20you%20about%20Carteo%20%E2%80%94%20I%27m%20interested%20in%20a%20digital%20menu%20for%20my%20restaurant." target="_blank" class="btn btn-whatsapp">💬 Message us on WhatsApp</a>
+          <p style="font-size:12px;color:rgba(255,255,255,0.35);text-align:start;margin-top:1rem;line-height:1.5;">*Our WhatsApp is managed by Elements Agency — just mention Carteo and we'll know who you're contacting.</p>
+        </div>
+        <div class="contact-side-card">
+          <h4>What happens next?</h4>
+          <ul class="check-list" style="margin-top:0.75rem">
+            <li style="font-size:13px;color:rgba(255,255,255,0.5)">We get back to you within a few hours</li>
+            <li style="font-size:13px;color:rgba(255,255,255,0.5)">You send us your menu content</li>
+            <li style="font-size:13px;color:rgba(255,255,255,0.5)">We build and send you the QR code</li>
+            <li style="font-size:13px;color:rgba(255,255,255,0.5)">Your menu is live within 3–5 days</li>
+          </ul>
+        </div>
+        <div class="contact-side-card">
+          <div class="contact-details">
+            <div class="contact-detail"><span class="cd-icon">📧</span><span><a href="mailto:hello@carteo.co.uk" style="color:inherit;text-decoration:none;">hello@carteo.co.uk</a></span></div>
+            <div class="contact-detail"><span class="cd-icon">🌍</span><span>Serving restaurants worldwide</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <a href="/" class="footer-logo">
+      <img src="/img/logo/carteo-white.webp" alt="Carteo logo"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <span class="footer-logo-text" style="display:none">Carteo</span>
+    </a>
+    <ul class="footer-links">
+      <li><a href="/privacy/">Privacy Policy</a></li>
+      <li><a href="/terms/">Terms & Conditions</a></li>
+    </ul>
+    <span class="footer-copy">© 2026 Carteo. All rights reserved.</span>
+  </div>
+</footer>
+
+<script>
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 20); });
+
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+hamburger.addEventListener('click', () => { hamburger.classList.toggle('open'); mobileMenu.classList.toggle('open'); });
+function closeMobile() { hamburger.classList.remove('open'); mobileMenu.classList.remove('open'); }
+
+document.querySelectorAll('.faq-q').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+
+const toggleEl = document.getElementById('billingToggle');
+const monthlyLabel = document.getElementById('monthlyLabel');
+const annualLabel = document.getElementById('annualLabel');
+const essentialPrice = document.getElementById('essentialPrice');
+const proPrice = document.getElementById('proPrice');
+const essentialAnnual = document.getElementById('essentialAnnual');
+const proAnnual = document.getElementById('proAnnual');
+let isAnnual = false;
+toggleEl.addEventListener('click', () => {
+  isAnnual = !isAnnual;
+  toggleEl.classList.toggle('annual', isAnnual);
+  monthlyLabel.classList.toggle('active', !isAnnual);
+  annualLabel.classList.toggle('active', isAnnual);
+  if (isAnnual) {
+    essentialPrice.textContent = '£15.83'; proPrice.textContent = '£24.17';
+    essentialAnnual.textContent = 'Billed as £190/year — save £38';
+    proAnnual.textContent = 'Billed as £290/year — save £58';
+  } else {
+    essentialPrice.textContent = '£19'; proPrice.textContent = '£29';
+    essentialAnnual.textContent = 'or £190/year — save £38';
+    proAnnual.textContent = 'or £290/year — save £58';
+  }
+});
+
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.style.opacity = '1'; e.target.style.transform = 'translateY(0)'; obs.unobserve(e.target); }
+  });
+}, { threshold: 0.08 });
+document.querySelectorAll('.plan-card, .step, .review-card, .problem-card, .why-item, .audience-card, .h-badge').forEach((el, i) => {
+  el.style.opacity = '0'; el.style.transform = 'translateY(18px)';
+  el.style.transition = `opacity 0.5s ease ${(i % 4) * 0.08}s, transform 0.5s ease ${(i % 4) * 0.08}s`;
+  obs.observe(el);
+});
+
+// Contact form → Google Forms
+document.getElementById('carteoForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  const fields = {
+    name:       document.getElementById('f-name'),
+    email:      document.getElementById('f-email'),
+    restaurant: document.getElementById('f-restaurant'),
+    country:    document.getElementById('f-country'),
+  };
+
+  // clear previous states
+  Object.values(fields).forEach(el => el.classList.remove('f-invalid'));
+  document.getElementById('f-error').style.display = 'none';
+  document.getElementById('f-success').style.display = 'none';
+
+  // validate required fields
+  let valid = true;
+  Object.values(fields).forEach(el => {
+    if (!el.value.trim()) {
+      el.classList.add('f-invalid');
+      valid = false;
+    }
+  });
+
+  // email format check
+  if (fields.email.value && !/\S+@\S+\.\S+/.test(fields.email.value)) {
+    fields.email.classList.add('f-invalid');
+    valid = false;
+  }
+
+  if (!valid) {
+    document.getElementById('f-error').style.display = 'block';
+    return;
+  }
+
+  const plan    = document.getElementById('f-plan').value;
+  const message = document.getElementById('f-message').value.trim();
+
+  const data = new FormData();
+  data.append('entry.1599657679', fields.name.value.trim());
+  data.append('entry.1670544275', fields.email.value.trim());
+  data.append('entry.294439268',  fields.restaurant.value.trim());
+  data.append('entry.40749868',   fields.country.value.trim());
+  data.append('entry.428144513',  plan);
+  data.append('entry.1090188194', message);
+
+  const btn = this.querySelector('button[type="submit"]');
+  btn.textContent = 'Sending…';
+  btn.disabled = true;
+
+  function showSuccess() {
+    const successEl = document.getElementById('f-success');
+    successEl.style.opacity = '1';
+    successEl.style.transition = '';
+    successEl.style.display = 'block';
+    setTimeout(() => {
+      successEl.style.transition = 'opacity 0.6s ease';
+      successEl.style.opacity = '0';
+      setTimeout(() => {
+        successEl.style.display = 'none';
+        successEl.style.opacity = '1';
+        successEl.style.transition = '';
+      }, 600);
+    }, 10000);
+  }
+
+  fetch('https://docs.google.com/forms/u/2/d/1ex2DHo2t4aX2xSqAxVSMKiqOFXCIYjg7CaQ_pLRAKsE/formResponse', {
+    method: 'POST',
+    mode: 'no-cors',
+    body: data
+  }).then(() => {
+    showSuccess();
+    document.getElementById('carteoForm').reset();
+    btn.textContent = 'Send my details →';
+    btn.disabled = false;
+  }).catch(() => {
+    showSuccess();
+    btn.textContent = 'Send my details →';
+    btn.disabled = false;
+  });
+});
+
+
+(function() {
+  const COOKIE_KEY = 'carteo_cookie_consent';
+
+  function getConsent() {
+    return localStorage.getItem(COOKIE_KEY);
+  }
+
+  function setConsent(value) {
+    localStorage.setItem(COOKIE_KEY, value);
+  }
+
+  function loadAnalytics() {
+    // Google Analytics
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-5KJEZHHT15';
+    document.head.appendChild(s);
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    window.gtag = gtag;
+    gtag('js', new Date());
+    gtag('config', 'G-5KJEZHHT15');
+
+    // Meta Pixel
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window,document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '757895160046938');
+    fbq('track', 'PageView');
+  }
+
+  function hideBanner() {
+    document.getElementById('cookie-banner').classList.add('hidden');
+  }
+
+  function showBanner() {
+    document.getElementById('cookie-banner').classList.remove('hidden');
+  }
+
+  // On load — check existing consent
+  var consent = getConsent();
+  if (consent === 'accepted') {
+    loadAnalytics();
+  } else if (consent === 'declined') {
+    // do nothing — no tracking
+  } else {
+    // No choice made yet — show banner
+    showBanner();
+  }
+
+  document.getElementById('cookieAccept').addEventListener('click', function() {
+    setConsent('accepted');
+    hideBanner();
+    loadAnalytics();
+  });
+
+  document.getElementById('cookieDecline').addEventListener('click', function() {
+    setConsent('declined');
+    hideBanner();
+  });
+})();
+</script>
+</body>
+</html>

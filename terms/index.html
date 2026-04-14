@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
+<title>Terms & Conditions — Carteo</title>
+<meta name="description" content="Carteo's Terms and Conditions. Please read these carefully before using our digital menu service.">
+
+<meta property="og:title" content="Terms & Conditions — Carteo">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://carteo.co.uk/terms/">
+<meta property="og:site_name" content="Carteo">
+<meta property="og:image" content="https://carteo.co.uk/img/carteo.webp">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<link rel="icon" href="/img/favicon/favicon.ico">
+<link rel="icon" href="/img/favicon/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/img/favicon/favicon.png">
+<link rel="canonical" href="https://carteo.co.uk/terms/">
+
+<style>
+:root {
+  --red: #E8372A;
+  --red-dark: #c42d21;
+  --red-light: #fdf0ef;
+  --ink: #1a1a18;
+  --muted: #6b6b67;
+  --border: #e8e8e4;
+  --bg: #fafaf8;
+  --white: #ffffff;
+  --radius: 14px;
+  --radius-sm: 8px;
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'DM Sans', sans-serif;
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --nav-h: 64px;
+  --container: 1200px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-body);
+  background: var(--white);
+  color: var(--ink);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* NAV */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: var(--nav-h);
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+.nav-inner {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 2rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-logo { display: flex; align-items: center; gap: 8px; text-decoration: none; }
+.nav-logo img { height: 34px; width: auto; }
+.nav-logo-text { font-family: var(--font-display); font-size: 24px; font-weight: 500; color: var(--ink); letter-spacing: -0.02em; }
+
+.btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: var(--font-body); font-size: 14px; font-weight: 500;
+  padding: 10px 22px; border-radius: 100px; text-decoration: none;
+  cursor: pointer; border: none; transition: all 0.2s var(--ease); white-space: nowrap;
+}
+.btn-outline { background: transparent; color: var(--ink); border: 1.5px solid var(--border); }
+.btn-outline:hover { border-color: var(--ink); background: var(--bg); }
+
+/* HERO STRIP */
+.page-hero {
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  padding: 4rem 2rem;
+}
+.page-hero-inner {
+  max-width: var(--container);
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.page-hero-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 1rem;
+}
+.page-hero-label::before {
+  content: '';
+  display: block;
+  width: 20px; height: 1.5px;
+  background: var(--red);
+}
+.page-hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(36px, 5vw, 60px);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: var(--ink);
+}
+.page-hero-meta { text-align: right; flex-shrink: 0; }
+.page-hero-meta p { font-size: 13px; color: var(--muted); line-height: 1.8; }
+
+/* LAYOUT */
+.page-body { flex: 1; padding: 5rem 2rem; }
+.page-body-inner {
+  max-width: var(--container);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 5rem;
+  align-items: start;
+}
+
+/* SIDEBAR */
+.sidebar { position: sticky; top: calc(var(--nav-h) + 2rem); }
+.sidebar-title { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin-bottom: 1rem; }
+.sidebar-links { list-style: none; display: flex; flex-direction: column; gap: 0; }
+.sidebar-links li a {
+  display: block; font-size: 14px; color: var(--muted); text-decoration: none;
+  padding: 0.5rem 0 0.5rem 1rem; border-left: 2px solid var(--border);
+  transition: all 0.2s; line-height: 1.4;
+}
+.sidebar-links li a:hover { color: var(--ink); border-left-color: var(--red); }
+.sidebar-links li a.active { color: var(--ink); border-left-color: var(--red); font-weight: 500; }
+.sidebar-contact {
+  margin-top: 2rem; background: var(--bg);
+  border-radius: var(--radius); padding: 1.25rem; border: 1px solid var(--border);
+}
+.sidebar-contact p { font-size: 13px; color: var(--muted); margin-bottom: 0.75rem; line-height: 1.6; }
+.sidebar-contact a { font-size: 13px; color: var(--red); text-decoration: none; font-weight: 500; }
+.sidebar-contact a:hover { text-decoration: underline; }
+
+/* CONTENT */
+.policy-content { min-width: 0; }
+.policy-section { margin-bottom: 3.5rem; padding-bottom: 3.5rem; border-bottom: 1px solid var(--border); }
+.policy-section:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.policy-section h2 {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 3vw, 30px);
+  font-weight: 400; letter-spacing: -0.02em;
+  color: var(--ink); margin-bottom: 1.25rem; line-height: 1.2;
+}
+.policy-section p { font-size: 15px; color: var(--muted); line-height: 1.8; margin-bottom: 1rem; }
+.policy-section p:last-child { margin-bottom: 0; }
+.policy-section ul, .policy-section ol { margin: 1rem 0 1rem 1.25rem; display: flex; flex-direction: column; gap: 0.5rem; }
+.policy-section li { font-size: 15px; color: var(--muted); line-height: 1.7; }
+.policy-section strong { color: var(--ink); font-weight: 500; }
+.policy-section a { color: var(--red); text-decoration: none; }
+.policy-section a:hover { text-decoration: underline; }
+
+.policy-highlight {
+  background: var(--bg); border: 1px solid var(--border);
+  border-left: 3px solid var(--red);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  padding: 1.25rem 1.5rem; margin: 1.5rem 0;
+}
+.policy-highlight p { font-size: 14px; color: var(--muted); margin: 0; line-height: 1.7; }
+
+/* FOOTER */
+footer { border-top: 1px solid var(--border); padding: 0; height: var(--nav-h); flex-shrink: 0; }
+.footer-inner {
+  max-width: var(--container); margin: 0 auto; padding: 0 2rem;
+  height: 100%; display: flex; align-items: center;
+  justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+}
+.footer-copy { font-size: 13px; color: var(--muted); }
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .page-body-inner { grid-template-columns: 1fr; gap: 3rem; }
+  .sidebar { position: static; }
+  .page-hero-inner { flex-direction: column; align-items: flex-start; }
+  .page-hero-meta { text-align: left; }
+  footer { height: auto; padding: 1.5rem 2rem; }
+  .footer-inner { flex-direction: column; align-items: center; gap: 1rem; text-align: center; }
+}
+@media (max-width: 600px) {
+  .nav-inner { padding: 0 1.5rem; }
+  .page-hero { padding: 3rem 1.5rem; }
+  .page-body { padding: 3rem 1.5rem; }
+  .footer-inner { padding: 0 1.5rem; justify-content: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <img src="/img/logo/carteo-red.webp" alt="Carteo logo"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <span class="nav-logo-text" style="display:none">Carteo</span>
+    </a>
+    <a href="/" class="btn btn-outline">← Back to home</a>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div>
+      <div class="page-hero-label">Legal</div>
+      <h1>Terms & Conditions</h1>
+    </div>
+    <div class="page-hero-meta">
+      <p><strong>Effective date:</strong> 14 April 2026<br>
+      <strong>Last updated:</strong> 14 April 2026<br>
+      <strong>Jurisdiction:</strong> United Kingdom</p>
+    </div>
+  </div>
+</div>
+
+<!-- BODY -->
+<div class="page-body">
+  <div class="page-body-inner">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <p class="sidebar-title">Contents</p>
+      <ul class="sidebar-links">
+        <li><a href="#about">1. About Carteo</a></li>
+        <li><a href="#service">2. The service</a></li>
+        <li><a href="#account">3. Getting started</a></li>
+        <li><a href="#your-content">4. Your content</a></li>
+        <li><a href="#payments">5. Payments & billing</a></li>
+        <li><a href="#updates">6. Updates & changes</a></li>
+        <li><a href="#cancellation">7. Cancellation</a></li>
+        <li><a href="#acceptable-use">8. Acceptable use</a></li>
+        <li><a href="#ip">9. Intellectual property</a></li>
+        <li><a href="#liability">10. Liability</a></li>
+        <li><a href="#changes-terms">11. Changes to these terms</a></li>
+        <li><a href="#governing-law">12. Governing law</a></li>
+        <li><a href="#contact">13. Contact us</a></li>
+      </ul>
+      <div class="sidebar-contact">
+        <p>Questions about these terms?</p>
+        <a href="mailto:hello@carteo.co.uk">hello@carteo.co.uk</a>
+      </div>
+    </aside>
+
+    <!-- CONTENT -->
+    <main class="policy-content">
+
+      <div class="policy-section">
+        <div class="policy-highlight">
+          <p>Please read these Terms & Conditions carefully before using Carteo's services. By engaging our service, submitting your menu content, or making a payment, you agree to be bound by these terms. If you do not agree, please do not use our service.</p>
+        </div>
+      </div>
+
+      <div class="policy-section" id="about">
+        <h2>1. About Carteo</h2>
+        <p>Carteo is a fully managed digital menu service for restaurants and food businesses, operating at <strong>carteo.co.uk</strong> and based in the United Kingdom.</p>
+        <p>These terms form the legal agreement between Carteo (<strong>"we"</strong>, <strong>"us"</strong>, <strong>"our"</strong>) and the business or individual using our service (<strong>"you"</strong>, <strong>"the client"</strong>).</p>
+        <p>For any questions regarding these terms, contact us at <a href="mailto:hello@carteo.co.uk">hello@carteo.co.uk</a>.</p>
+      </div>
+
+      <div class="policy-section" id="service">
+        <h2>2. The service</h2>
+        <p>Carteo provides a fully managed digital menu service. This includes, depending on the plan selected:</p>
+        <ul>
+          <li>Design of a digital menu based on content you provide</li>
+          <li>Translation of menu content into selected languages</li>
+          <li>Hosting of your digital menu on our domain or your own domain</li>
+          <li>Generation and delivery of a QR code for guest access</li>
+          <li>Ongoing minor updates to menu content within the allowance of your plan</li>
+          <li>Support via WhatsApp during business hours</li>
+        </ul>
+        <p>The exact features available to you depend on the plan you have selected (Essential or Pro). Details of each plan are described on our website and confirmed at the time of purchase.</p>
+        <p>We reserve the right to modify, improve or update our service at any time. We will notify you of any material changes that affect your plan.</p>
+      </div>
+
+      <div class="policy-section" id="account">
+        <h2>3. Getting started</h2>
+        <p>To use Carteo, you must:</p>
+        <ul>
+          <li>Be a business owner, manager or authorised representative of a food business</li>
+          <li>Be at least 18 years of age</li>
+          <li>Provide accurate and complete information when contacting us or submitting content</li>
+          <li>Ensure that any content you provide to us does not infringe any third-party rights</li>
+        </ul>
+        <p>Our service is intended for business use only. We do not provide services to private individuals for personal use.</p>
+        <p>Your digital menu will be live once we have received your content, completed the design and set up hosting. We aim to complete this within <strong>3–5 working days</strong> of receiving all required materials. This is an estimate and not a contractual guarantee.</p>
+      </div>
+
+      <div class="policy-section" id="your-content">
+        <h2>4. Your content</h2>
+        <p>You retain full ownership of the content you provide to us — including your menu text, prices, descriptions, images, logos and brand assets (<strong>"your content"</strong>).</p>
+        <p>By submitting your content to us, you grant Carteo a non-exclusive, royalty-free licence to use, reproduce, display and adapt your content solely for the purpose of designing, building and maintaining your digital menu.</p>
+        <p>You are responsible for ensuring that:</p>
+        <ul>
+          <li>All content you provide is accurate, up to date and lawful</li>
+          <li>You have the right to use any images, logos or other materials you submit</li>
+          <li>Your menu content complies with all applicable laws, including food labelling and allergen regulations</li>
+        </ul>
+        <p>Carteo is not responsible for the accuracy of menu content, pricing, allergen information or any other details provided by you. It is your responsibility to ensure your menu is correct before and after publication.</p>
+        <div class="policy-highlight">
+          <p><strong>Important:</strong> UK food law requires menus to clearly declare the 14 major allergens. It is your legal responsibility as a food business to ensure this information is accurate and displayed correctly. Carteo will include allergen information as you provide it but accepts no liability for omissions or errors in this data.</p>
+        </div>
+      </div>
+
+      <div class="policy-section" id="payments">
+        <h2>5. Payments & billing</h2>
+        <p>Carteo operates on a subscription basis. The following payment terms apply:</p>
+        <ul>
+          <li><strong>First month free</strong> — your first month of service is provided free of charge, with no card required at sign-up.</li>
+          <li><strong>Monthly billing</strong> — if you choose to continue, you will be billed monthly at the rate of your selected plan.</li>
+          <li><strong>Annual billing</strong> — annual plans are billed upfront for the full year at a discounted rate.</li>
+          <li><strong>Pricing</strong> — current plan prices are displayed on our website. Prices are in GBP and are subject to change with reasonable notice.</li>
+          <li><strong>Late payment</strong> — failure to pay may result in suspension or termination of your digital menu service.</li>
+        </ul>
+        <p>All prices are exclusive of VAT unless otherwise stated. Where applicable, VAT will be added at the prevailing rate.</p>
+        <p>Add-on services (such as extra languages, redesigns or additional updates) are charged separately and agreed on a per-request basis before work begins.</p>
+      </div>
+
+      <div class="policy-section" id="updates">
+        <h2>6. Updates & changes to your menu</h2>
+        <p>Each plan includes a set number of update requests per month:</p>
+        <ul>
+          <li><strong>Essential</strong> — 2 update requests per month</li>
+          <li><strong>Pro</strong> — 5 update requests per month</li>
+        </ul>
+        <p>One update request is defined as one batch of changes submitted together in a single message. This may include price changes, text edits, image replacements or other minor modifications.</p>
+        <p>Updates that require structural redesign, significant layout changes or additional languages are not included in the standard update allowance and will be quoted separately.</p>
+        <p>Unused update allowances do not roll over to the following month.</p>
+        <p>We aim to complete update requests within <strong>1–3 working days</strong> of receipt. This is an estimate and not a contractual guarantee.</p>
+      </div>
+
+      <div class="policy-section" id="cancellation">
+        <h2>7. Cancellation & termination</h2>
+        <p><strong>Cancellation by you:</strong> You may cancel your Carteo subscription at any time by contacting us at <a href="mailto:hello@carteo.co.uk">hello@carteo.co.uk</a>.</p>
+        <ul>
+          <li>Monthly subscribers: cancellation takes effect at the end of the current billing period. No refunds are issued for partial months.</li>
+          <li>Annual subscribers: cancellation takes effect at the end of the annual billing period. Annual plans are non-refundable once the plan has been activated, except where required by law.</li>
+        </ul>
+        <p>Upon cancellation, your digital menu will be taken offline at the end of your paid period.</p>
+        <p><strong>Termination by Carteo:</strong> We reserve the right to suspend or terminate your service immediately if:</p>
+        <ul>
+          <li>You breach these Terms & Conditions</li>
+          <li>You fail to make payment when due</li>
+          <li>Your content is found to be unlawful, harmful or in violation of third-party rights</li>
+          <li>We reasonably believe continued service would expose us or others to legal risk</li>
+        </ul>
+        <p>Where possible, we will provide notice before terminating your service and give you the opportunity to resolve the issue.</p>
+      </div>
+
+      <div class="policy-section" id="acceptable-use">
+        <h2>8. Acceptable use</h2>
+        <p>You agree not to use the Carteo service to publish, display or distribute content that:</p>
+        <ul>
+          <li>Is false, misleading or deceptive</li>
+          <li>Infringes the intellectual property rights of any third party</li>
+          <li>Violates any applicable law or regulation</li>
+          <li>Is defamatory, offensive, discriminatory or harmful</li>
+          <li>Contains malicious code, viruses or other harmful software</li>
+        </ul>
+        <p>We reserve the right to refuse to publish or to remove any content that we deem to be in violation of these terms or otherwise inappropriate, without prior notice.</p>
+      </div>
+
+      <div class="policy-section" id="ip">
+        <h2>9. Intellectual property</h2>
+        <p><strong>Your content:</strong> You retain all rights to the content you provide. We do not claim ownership of your menu items, descriptions, images or brand assets.</p>
+        <p><strong>Our work:</strong> The design, layout, code and structure of your digital menu as created by Carteo remains the intellectual property of Carteo until full payment has been received for the relevant billing period. Upon cancellation, design assets created specifically for you may be provided on request at our discretion.</p>
+        <p><strong>Our brand:</strong> The Carteo name, logo and website content are owned by Carteo and may not be used without our written permission.</p>
+      </div>
+
+      <div class="policy-section" id="liability">
+        <h2>10. Liability</h2>
+        <p>Carteo provides its service with reasonable care and skill. However, to the fullest extent permitted by UK law:</p>
+        <ul>
+          <li>We do not guarantee that the service will be uninterrupted, error-free or available at all times</li>
+          <li>We are not liable for any loss of business, revenue, profits or data arising from your use of the service</li>
+          <li>We are not liable for the accuracy of content you provide, including allergen information, prices or descriptions</li>
+          <li>Our total liability to you in any circumstance is limited to the amount you have paid us in the 3 months preceding the claim</li>
+        </ul>
+        <p>Nothing in these terms excludes or limits our liability for death or personal injury caused by negligence, fraud or any other liability that cannot be excluded under UK law.</p>
+        <p>As our service is provided to businesses, the Consumer Rights Act 2015 does not apply to our agreement.</p>
+      </div>
+
+      <div class="policy-section" id="changes-terms">
+        <h2>11. Changes to these terms</h2>
+        <p>We may update these Terms & Conditions from time to time. When we make material changes, we will notify you by email or by displaying a notice on our website, and update the "Last updated" date at the top of this page.</p>
+        <p>Your continued use of the Carteo service after changes take effect constitutes your acceptance of the revised terms. If you do not agree to the updated terms, you may cancel your subscription before they take effect.</p>
+      </div>
+
+      <div class="policy-section" id="governing-law">
+        <h2>12. Governing law</h2>
+        <p>These Terms & Conditions are governed by and construed in accordance with the laws of <strong>England and Wales</strong>.</p>
+        <p>Any disputes arising from or relating to these terms or our service shall be subject to the exclusive jurisdiction of the courts of England and Wales.</p>
+        <p>We will always try to resolve any dispute informally in the first instance. Please contact us at <a href="mailto:hello@carteo.co.uk">hello@carteo.co.uk</a> before pursuing formal action.</p>
+      </div>
+
+      <div class="policy-section" id="contact">
+        <h2>13. Contact us</h2>
+        <p>If you have any questions about these Terms & Conditions or our service, please get in touch:</p>
+        <p><strong>Email:</strong> <a href="mailto:hello@carteo.co.uk">hello@carteo.co.uk</a></p>
+        <p>We aim to respond to all enquiries within <strong>2 working days</strong>.</p>
+      </div>
+
+    </main>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <a href="/" class="nav-logo">
+      <img src="/img/logo/carteo-red.webp" alt="Carteo logo"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <span class="nav-logo-text" style="display:none">Carteo</span>
+    </a>
+    <ul style="display:flex;gap:1.5rem;list-style:none;">
+      <li><a href="/privacy/" style="font-size:13px;color:var(--muted);text-decoration:none;">Privacy Policy</a></li>
+      <li><a href="/terms/" style="font-size:13px;color:var(--muted);text-decoration:none;font-weight:500;color:var(--ink);">Terms & Conditions</a></li>
+    </ul>
+    <span class="footer-copy">© 2026 Carteo. All rights reserved.</span>
+  </div>
+</footer>
+
+<script>
+const sections = document.querySelectorAll('.policy-section[id]');
+const sidebarLinks = document.querySelectorAll('.sidebar-links a');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      sidebarLinks.forEach(link => link.classList.remove('active'));
+      const active = document.querySelector(`.sidebar-links a[href="#${entry.target.id}"]`);
+      if (active) active.classList.add('active');
+    }
+  });
+}, { rootMargin: '-20% 0px -70% 0px' });
+sections.forEach(s => observer.observe(s));
+</script>
+
+</body>
+</html>

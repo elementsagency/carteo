@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Page Not Found — Carteo</title>
+
+<meta name="description" content="Sorry, this page doesn't exist. Head back to Carteo to learn about our fully managed digital menus for restaurants.">
+<meta property="og:title" content="Page Not Found — Carteo">
+<meta property="og:description" content="Sorry, this page doesn't exist. Head back to Carteo to learn about our fully managed digital menus for restaurants.">
+<meta property="og:url" content="https://carteo.co.uk/404">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://carteo.co.uk/img/carteo.webp">
+<meta property="og:site_name" content="Carteo">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<link rel="icon" href="/img/favicon/favicon.ico">
+<link rel="icon" href="/img/favicon/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/img/favicon/favicon.png">
+
+<style>
+:root {
+  --red: #E8372A;
+  --red-dark: #c42d21;
+  --red-light: #fdf0ef;
+  --ink: #1a1a18;
+  --muted: #6b6b67;
+  --border: #e8e8e4;
+  --bg: #fafaf8;
+  --white: #ffffff;
+  --radius: 14px;
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'DM Sans', sans-serif;
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --nav-h: 64px;
+  --container: 1200px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { height: 100%; }
+body {
+  font-family: var(--font-body);
+  background: var(--white);
+  color: var(--ink);
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* NAV */
+nav {
+  height: var(--nav-h);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  padding: 0;
+  flex-shrink: 0;
+}
+.nav-inner {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 2rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-logo { display: flex; align-items: center; gap: 8px; text-decoration: none; }
+.nav-logo img { height: 34px; width: auto; }
+.nav-logo-text { font-family: var(--font-display); font-size: 24px; font-weight: 500; color: var(--ink); letter-spacing: -0.02em; }
+
+.btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: var(--font-body); font-size: 14px; font-weight: 500;
+  padding: 10px 22px; border-radius: 100px; text-decoration: none;
+  cursor: pointer; border: none; transition: all 0.2s var(--ease); white-space: nowrap;
+}
+.btn-primary { background: var(--red); color: white; }
+.btn-primary:hover { background: var(--red-dark); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(232,55,42,0.3); }
+.btn-outline { background: transparent; color: var(--ink); border: 1.5px solid var(--border); }
+.btn-outline:hover { border-color: var(--ink); background: var(--bg); }
+.btn-lg { font-size: 16px; padding: 14px 32px; }
+
+/* MAIN */
+main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* background decorative blob */
+.bg-blob {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+.bg-blob-1 {
+  width: 600px; height: 600px;
+  top: -150px; right: -150px;
+  background: radial-gradient(circle, rgba(232,55,42,0.05) 0%, transparent 70%);
+}
+.bg-blob-2 {
+  width: 400px; height: 400px;
+  bottom: -100px; left: -100px;
+  background: radial-gradient(circle, rgba(232,55,42,0.04) 0%, transparent 70%);
+}
+
+.content {
+  max-width: 640px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* big 404 */
+.four-oh-four {
+  font-family: var(--font-display);
+  font-size: clamp(100px, 18vw, 180px);
+  font-weight: 300;
+  line-height: 1;
+  color: var(--ink);
+  letter-spacing: -0.04em;
+  margin-bottom: 0.25rem;
+  position: relative;
+  display: inline-block;
+  opacity: 0;
+  animation: fadeUp 0.8s var(--ease) 0.1s forwards;
+}
+
+/* the zero is styled as a menu/QR plate */
+.four-oh-four .zero {
+  color: var(--red);
+  font-style: italic;
+  position: relative;
+  display: inline-block;
+}
+.four-oh-four .zero::after {
+  content: '';
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40%;
+  height: 3px;
+  background: var(--red);
+  border-radius: 2px;
+  opacity: 0.4;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--red);
+  background: var(--red-light);
+  padding: 5px 14px;
+  border-radius: 100px;
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  animation: fadeUp 0.7s var(--ease) 0.3s forwards;
+}
+
+.headline {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  color: var(--ink);
+  margin-bottom: 1rem;
+  opacity: 0;
+  animation: fadeUp 0.7s var(--ease) 0.4s forwards;
+}
+
+.subtext {
+  font-size: 17px;
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+  opacity: 0;
+  animation: fadeUp 0.7s var(--ease) 0.5s forwards;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  opacity: 0;
+  animation: fadeUp 0.7s var(--ease) 0.6s forwards;
+}
+
+/* mini phone mockup — decorative */
+.mini-phone-wrap {
+  margin: 0 auto 2.5rem;
+  position: relative;
+  display: inline-block;
+  opacity: 0;
+  animation: fadeUp 0.8s var(--ease) 0.2s forwards;
+}
+.mini-phone {
+  width: 80px;
+  height: 140px;
+  background: var(--ink);
+  border-radius: 18px;
+  padding: 6px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.18), inset 0 0 0 1px rgba(255,255,255,0.07);
+  position: relative;
+}
+.mini-phone-notch {
+  position: absolute;
+  top: 10px; left: 50%;
+  transform: translateX(-50%);
+  width: 30px; height: 8px;
+  background: var(--ink);
+  border-radius: 4px;
+  z-index: 10;
+}
+.mini-phone-screen {
+  width: 100%; height: 100%;
+  border-radius: 13px;
+  background: #f0ebe4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 1rem 0.5rem 0.5rem;
+}
+.mini-bar { width: 100%; height: 5px; background: #ddd; border-radius: 3px; }
+.mini-bar.s { width: 65%; }
+.mini-bar.m { width: 80%; }
+.mini-qr {
+  width: 28px; height: 28px;
+  background: var(--ink);
+  border-radius: 4px;
+  margin-top: 4px;
+  position: relative;
+  opacity: 0.15;
+}
+
+/* question mark floating badge */
+.float-badge {
+  position: absolute;
+  top: -12px;
+  right: -28px;
+  width: 36px; height: 36px;
+  background: var(--red);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  font-family: var(--font-display);
+  box-shadow: 0 4px 16px rgba(232,55,42,0.4);
+  animation: bounce 2s ease-in-out infinite;
+}
+
+/* divider with text */
+.divider-text {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 2.5rem 0;
+  opacity: 0;
+  animation: fadeUp 0.7s var(--ease) 0.7s forwards;
+}
+.divider-text::before,
+.divider-text::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+.divider-text span {
+  font-size: 12px;
+  color: var(--muted);
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* quick links */
+.quick-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  opacity: 0;
+  animation: fadeUp 0.7s var(--ease) 0.8s forwards;
+}
+.quick-link {
+  font-size: 13px;
+  color: var(--muted);
+  text-decoration: none;
+  padding: 6px 14px;
+  border-radius: 100px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  transition: all 0.2s;
+}
+.quick-link:hover {
+  color: var(--ink);
+  border-color: var(--ink);
+  background: white;
+}
+
+/* FOOTER */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 0;
+  height: var(--nav-h);
+  flex-shrink: 0;
+}
+.footer-inner {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 2rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.footer-copy { font-size: 13px; color: var(--muted); }
+
+/* ANIMATIONS */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-5px); }
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .nav-inner { padding: 0 1.5rem; }
+  main { padding: 3rem 1.5rem; }
+  .actions { flex-direction: column; align-items: stretch; }
+  .actions .btn { justify-content: center; }
+  .footer-inner { padding: 0 1.5rem; justify-content: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <img src="/img/logo/carteo-red.webp" alt="Carteo logo"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <span class="nav-logo-text" style="display:none">Carteo</span>
+    </a>
+    <a href="/#contact" class="btn btn-primary">Get started free</a>
+  </div>
+</nav>
+
+<!-- MAIN -->
+<main>
+  <div class="bg-blob bg-blob-1"></div>
+  <div class="bg-blob bg-blob-2"></div>
+
+  <div class="content">
+<div style="display:flex;flex-direction:column;align-items:center;gap:0.75rem;margin-bottom:0.5rem;">
+  <div class="eyebrow" style="margin-bottom:0;">✦ This page went missing</div>
+  <div class="four-oh-four" style="margin-bottom:0;">4<span class="zero">0</span>4</div>
+</div>
+
+    <h1 class="headline">Looks like this page<br>isn't on the menu.</h1>
+
+    <p class="subtext">
+      The page you're looking for doesn't exist — it may have moved, been renamed, or never existed in the first place. Let's get you back on track.
+    </p>
+
+    <div class="actions">
+      <a href="/" class="btn btn-primary btn-lg">← Back to homepage</a>
+      <a href="/#contact" class="btn btn-outline btn-lg">Get in touch</a>
+    </div>
+
+    <div class="divider-text">
+      <span>Or jump to a section</span>
+    </div>
+
+    <div class="quick-links">
+      <a href="/#how" class="quick-link">How it works</a>
+      <a href="/#pricing" class="quick-link">Pricing</a>
+      <a href="/demo/" class="quick-link">Live demo</a>
+      <a href="/#faq" class="quick-link">FAQ</a>
+      <a href="/#contact" class="quick-link">Contact</a>
+    </div>
+
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <span class="footer-copy">© 2026 Carteo. All rights reserved.</span>
+  </div>
+</footer>
+
+</body>
+</html>
